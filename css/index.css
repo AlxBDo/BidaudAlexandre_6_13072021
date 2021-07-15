@@ -1,0 +1,15 @@
+header img {
+    left: 100px;
+    top: 43px;
+}
+header nav {
+    position: absolute;
+    width: 553px;
+    height: 49px;
+    left: 388px;
+    top: 43px;
+}
+nav li {
+    list-style: none;
+    display: inline-block;
+}
