@@ -1,15 +1,34 @@
-header img {
-    left: 100px;
-    top: 43px;
+h1 {
+	right: 8%;
+	top: 3%;
+	font-size: 2em;
+}
+header {
+	width: 70%;
+	top: 0;
+	left: 0;
+	text-align: left;
+	align-items: flex-end;
 }
 header nav {
-    position: absolute;
-    width: 553px;
-    height: 49px;
-    left: 388px;
-    top: 43px;
+    padding: 1% 0;
+	margin: 0 auto;
+    text-align: center;
 }
 nav li {
     list-style: none;
-    display: inline-block;
+    font-size: 0.66em;
+}
+nav ul { width: 100%; }
+#pass-cont {
+	background-color: #DB8876;
+	color: black;
+	font-weight: 700;
+	line-height: 1.5em;
+	border-radius: 5px;
+	text-align: center;
+	padding: 3px;
+	position: fixed;
+	margin-left: 45%;
+	width: 10%;
 }

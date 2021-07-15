@@ -1,5 +1,35 @@
+:root{
+    --first-color-text : #901C1C;
+    --second-color-text : #D3573C;
+    --font-fam : "DM Sans";
+}
+
+a { text-decoration: none; }
+.absolute { position: absolute; }
+body {
+    font: normal normal 18px var(--font-fam);
+    line-height : 15.62px;
+}
+.first-color-text { color: var(--first-color-text) ; }
+.flex{ display: flex; }
+header a:not(.nav-link) {
+	margin-top: 3%;
+	margin-left: 7%;
+}
 header img {
-    position: absolute;
     width: 200px;
     height: 50px;
 }
+.hidden{ display: none ; }
+.inline-block{ display: inline-block;}
+.just-cont-spac-betw { justify-content: space-between; }
+.tags{ 
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    padding: 0 0.3em 0.1em;
+}
+.tags li::before{ 
+    content: "#"; 
+    float: left;
+}
+ul { margin: 0; }

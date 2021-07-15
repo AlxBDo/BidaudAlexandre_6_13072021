@@ -7,9 +7,12 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans" />
+        <script src="js/obj/jsonDataCollector.js"></script>
+        <script src="js/index.js"></script>
     </head>
     <body>
-        <header>
+        <div id="pass-cont" class="hidden" role="link">Passer au contenu</div>
+        <header class="absolute flex just-cont-spac-betw">
             <a href="index.html">
                 <img 
                     src="img/Fisheye_logo.svg" 
@@ -18,67 +21,75 @@
                 />
             </a>
             <nav aria-label="photographer categories">
-                <ul>
-                    <a href="#photographers-list">
+                <ul class="flex just-cont-spac-betw">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="portrait-photographer" 
                             aria-label="Portrait photographer"
+                            class="inline-block" 
                         >
                             Portrait
                         </li>
                     </a>
-                    <a href="#photographers-list">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="art-photographer" 
                             aria-label="Art photographer"
+                            class="inline-block" 
                         >
                             Art
                         </li>
                     </a>
-                    <a href="#photographers-list">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="fashion-photographer" 
                             aria-label="Fashion photographer"
+                            class="inline-block" 
                         >
                             Fashion
                         </li>
                     </a>
-                    <a href="#photographers-list">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="architecture-photographer" 
                             aria-label="Architecture photographer"
+                            class="inline-block" 
                         >
                             Architecture
                         </li>
                     </a>
-                    <a href="#photographers-list">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="travel-photographer" 
                             aria-label="Travel photographer"
+                            class="inline-block" 
                         >
                             Travel
                         </li>
                     </a>
-                    <a href="#photographers-list">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="sports-photographer" 
                             aria-label="Sports photographer"
+                            class="inline-block" 
                         >
                             Sports
                         </li>
                     </a>
-                    <a href="#photographers-list">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="animals-photographer" 
                             aria-label="Animals photographer"
+                            class="inline-block" 
                         >
                             Animals
                         </li>
                     </a>
-                    <a href="#photographers-list">
+                    <a href="#photographers-list" class="nav-link first-color-text tags">
                         <li 
                             id="events-photographer" 
                             aria-label="Events photographer"
+                            class="inline-block" 
                         >
                             Events
                         </li>
@@ -87,7 +98,7 @@
             </nav>
         </header>
         <main>
-            <h1>Nos photographes</h1>
+            <h1 class="absolute first-color-text">Nos photographes</h1>
             <section id="photographers-list">
                 
             </section>
