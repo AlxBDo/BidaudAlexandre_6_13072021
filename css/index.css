@@ -15,10 +15,6 @@ header nav {
 	margin: 0 auto;
     text-align: center;
 }
-nav li {
-    list-style: none;
-    font-size: 0.66em;
-}
 nav ul { width: 100%; }
 #pass-cont {
 	background-color: #DB8876;
@@ -31,4 +27,28 @@ nav ul { width: 100%; }
 	position: fixed;
 	margin-left: 45%;
 	width: 10%;
+}
+#photographers-list {
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 10% auto 0;
+}
+#photographers-list .profil {
+	width: 30%;
+	overflow: hidden;
+	flex-direction: column;
+	text-align: center;
+	padding: 1%;
+}
+#photographers-list .profil p {
+	margin: 0px auto 10px;
+}
+.profil img {
+	width: 50%;
+	margin: 0 auto;
+	height: 50%;
+}
+
+@media screen and (max-width : 1024px) {
+	.profil img { height: 40%; }
 }

@@ -1,6 +1,8 @@
 :root{
-    --first-color-text : #901C1C;
-    --second-color-text : #D3573C;
+    --first-color-dark : #901C1C;
+    --first-color-light : #D3573C;
+    --second-color-dark: #525252 ;
+    --second-color-light: #FAFAFA ;
     --font-fam : "DM Sans";
 }
 
@@ -10,26 +12,41 @@ body {
     font: normal normal 18px var(--font-fam);
     line-height : 15.62px;
 }
-.first-color-text { color: var(--first-color-text) ; }
-.flex{ display: flex; }
-header a:not(.nav-link) {
+.first-color-text { color: var(--first-color-dark) ; }
+#fishEye-HomePage {
 	margin-top: 3%;
 	margin-left: 7%;
 }
+.flex{ display: flex; }
 header img {
     width: 200px;
     height: 50px;
 }
 .hidden{ display: none ; }
 .inline-block{ display: inline-block;}
-.just-cont-spac-betw { justify-content: space-between; }
-.tags{ 
-    border: 1px solid #C4C4C4;
-    border-radius: 10px;
-    padding: 0 0.3em 0.1em;
+li { list-style: none; }
+.name-photographer { color: var(--first-color-light); }
+nav a { margin-right: 1%; }
+.profil img {
+	object-fit: cover;
+	border-radius: 100%;
 }
-.tags li::before{ 
-    content: "#"; 
-    float: left;
+.profil p:first-of-type { color: var(--first-color-dark); }
+.profil p:last-of-type {
+	color: var(--second-color-dark);
+	font-size: small;
 }
+.profil p:nth-of-type(2) {
+	color: black;
+	font-size: 0.8em;
+}
+.tags {
+	border: 1px solid #C4C4C4;
+	border-radius: 20px;
+	padding: 5px;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+.tags span::before{ content: "#"; }
 ul { margin: 0; }
+ul.flex { justify-content: center; }

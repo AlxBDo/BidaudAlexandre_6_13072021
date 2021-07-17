@@ -1,16 +1,24 @@
 class jsonDataCollector {
 
-    static jsonDataFile = "../../data/fishEyeData.json";
+    static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
 
-    static read(){
+    static search(keySearched = false, valueSearched = false){
         fetch(this.jsonDataFile)
             .then(function(res){
                 if(res.ok){
-                    return res.json;
+                    return res.json();
                 }
             })
             .then(function(value){
-                console.log(value);
+                if(Array.isArray(value['photographers'])){
+                    let photographers = [];
+                    for(let photographer of value['photographers']){
+                        if(
+                            !keySearched 
+                            || photographer[keySearched].includes(valueSearched)
+                        ){ new photoShortProfilDisplay(photographer).show(); }
+                    }
+                }
             })
             .catch(function(err){
                 console.log(err);

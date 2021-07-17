@@ -7,13 +7,11 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans" />
-        <script src="js/obj/jsonDataCollector.js"></script>
-        <script src="js/index.js"></script>
     </head>
     <body>
         <div id="pass-cont" class="hidden" role="link">Passer au contenu</div>
         <header class="absolute flex just-cont-spac-betw">
-            <a href="index.html">
+            <a href="index.html" id="fishEye-HomePage">
                 <img 
                     src="img/Fisheye_logo.svg" 
                     alt="Fisheye Home page" 
@@ -21,77 +19,77 @@
                 />
             </a>
             <nav aria-label="photographer categories">
-                <ul class="flex just-cont-spac-betw">
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                <ul class="flex">
+                    <a href="#photographers-list">
                         <li 
                             id="portrait-photographer" 
                             aria-label="Portrait photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Portrait
+                            <span>Portrait</span>
                         </li>
                     </a>
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                    <a href="#photographers-list">
                         <li 
                             id="art-photographer" 
                             aria-label="Art photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Art
+                            <span>Art</span>
                         </li>
                     </a>
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                    <a href="#photographers-list">
                         <li 
                             id="fashion-photographer" 
                             aria-label="Fashion photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Fashion
+                            <span>Fashion</span>
                         </li>
                     </a>
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                    <a href="#photographers-list">
                         <li 
                             id="architecture-photographer" 
                             aria-label="Architecture photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Architecture
+                            <span>Architecture</span>
                         </li>
                     </a>
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                    <a href="#photographers-list">
                         <li 
                             id="travel-photographer" 
                             aria-label="Travel photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Travel
+                            <span>Travel</span>
                         </li>
                     </a>
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                    <a href="#photographers-list">
                         <li 
                             id="sports-photographer" 
                             aria-label="Sports photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Sports
+                            <span>Sports</span>
                         </li>
                     </a>
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                    <a href="#photographers-list">
                         <li 
                             id="animals-photographer" 
                             aria-label="Animals photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Animals
+                            <span>Animals</span>
                         </li>
                     </a>
-                    <a href="#photographers-list" class="nav-link first-color-text tags">
+                    <a href="#photographers-list">
                         <li 
                             id="events-photographer" 
                             aria-label="Events photographer"
-                            class="inline-block" 
+                            class="inline-block first-color-text tags" 
                         >
-                            Events
+                            <span>Events</span>
                         </li>
                     </a>
                 </ul>
@@ -99,9 +97,13 @@
         </header>
         <main>
             <h1 class="absolute first-color-text">Nos photographes</h1>
-            <section id="photographers-list">
+            <section id="photographers-list" class="flex">
                 
             </section>
         </main>
+        <script src="js/obj/jsonDataCollector.js"></script>
+        <script src="js/obj/photographerDisplay.js"></script>
+        <script src="js/obj/photoShortProfilDisplay.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>
