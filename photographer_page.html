@@ -20,14 +20,14 @@
         </header>
         <main>
             <section id="photographer-informations">
-                <div>
-                    <h1 id="Name" class="first-color-text"></h1>
+                <div class="profil">
+                    <h1 id="Name" class="name-photographer"></h1>
                     <p id="ComeFrom"></p>
                     <p id="Tagline"></p>
                     <ul id="Tags"></ul>
                 </div>
                 <div>
-                    <a href="" id="contact-form-link">Contactez-moi</a>
+                    <a href="" id="contact-form-link" class="interactiv-element">Contactez-moi</a>
                 </div>
                 <div>
                     <img 
@@ -40,12 +40,16 @@
             <section id="photography-gallery">
                 <form>
                     <label for="order-by">Trier par</label>
-                    <select id="order-by">
+                    <select id="order-by" class="interactiv-element">
                         <option value="popu" selected>Popularité</option>
                         <option value="date">Date</option>
                         <option value="titr">Titre</option>
                     </select>
                 </form>
+            </section>
+            <section id="further-information">
+                <p id="like-total"></p>
+                <p id="Price"></p>
             </section>
         </main>
         <script src="js/obj/jsonDataCollector.js"></script>

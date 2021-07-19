@@ -8,8 +8,21 @@
       "tags": ["portrait", "events", "travel", "animals"],
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
-      "portrait": "MimiKeel.jpg"
+      "portrait": "MimiKeel.jpg",
+      "book":[
+        ["Animals_Rainbow.jpg", "15/07/2021", 20],
+        ["Animals_Wild_Horses_in_the_mountains.mp4", "16/07/2021", 28],
+        ["Event_BenevidesWedding.jpg", "15/07/2021", 18],
+        ["Event_PintoWedding.jpg", "15/07/2021", 13],
+        ["Event_SeasideWedding.jpg", "15/07/2021", 22],
+        ["Portrait_Background.jpg", "15/07/2021", 17],
+        ["Portrait_Nora.jpg", "15/07/2021", 17],
+        ["Portrait_Wednesday.jpg", "15/07/2021", 17],
+        ["Travel_HillsideColor.jpg", "15/07/2021", 25],
+        ["Travel_Lonesome.jpg", "15/07/2021", 25]
+      ]
     },
+    
     {
       "name": "Ellie-Rose Wilkens",
       "id": 930,

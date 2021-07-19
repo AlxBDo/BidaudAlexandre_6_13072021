@@ -10,6 +10,8 @@ class photographerDisplayAbstract {
         }
     }
 
+    getBook(){ return this.jdo.book;}
+
     getComeFrom(){ return this.jdo.city +", "+this.jdo.country; }
 
     getId(){ return this.jdo.id; }
@@ -34,7 +36,7 @@ class photographerDisplayAbstract {
 
     getPortrait(){ return this.jdo.portrait; }
 
-    getPrice(){ return this.jdo.price; }
+    getPrice(){ return this.jdo.price+"€/jour"; }
 
     getTagline(){ return this.jdo.tagline; }
 

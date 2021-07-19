@@ -1,17 +1,20 @@
 class photographerLongProfilDisplay extends photographerDisplayAbstract {
     
     show(){
-        let domElementToComplete = ['Name', "ComeFrom", "Tagline", "Tags", "Portrait", "Price", "Like"];
+        let domElementToComplete = ['Name', "ComeFrom", "Tagline", "Tags", "Portrait", "Price", "Like", "Book"];
         domElementToComplete.forEach(element => {
             switch(element){
-                case "Tags":
-                    this.getLiTags(document.getElementById("Tags"));
+                case "Book":
+                    console.log(this.getBook());
+                    break;
+                case "Like":
+                    // TODO gestion des likes
                     break;
                 case "Portrait":
                     this.setProfilImgSrc(document.getElementById("Portrait"));
                     break;
-                case "Like":
-                    // TODO gestion des likes
+                case "Tags":
+                    this.getLiTags(document.getElementById("Tags"));
                     break;
                 default:
                     document.getElementById(element).textContent = this["get"+element]();
