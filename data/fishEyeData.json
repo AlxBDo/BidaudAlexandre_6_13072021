@@ -10,19 +10,19 @@
       "price": 400,
       "portrait": "MimiKeel.jpg",
       "book":[
-        ["Animals_Rainbow.jpg", "15/07/2021", 20],
-        ["Animals_Wild_Horses_in_the_mountains.mp4", "16/07/2021", 28],
-        ["Event_BenevidesWedding.jpg", "15/07/2021", 18],
-        ["Event_PintoWedding.jpg", "15/07/2021", 13],
-        ["Event_SeasideWedding.jpg", "15/07/2021", 22],
-        ["Portrait_Background.jpg", "15/07/2021", 17],
-        ["Portrait_Nora.jpg", "15/07/2021", 17],
-        ["Portrait_Wednesday.jpg", "15/07/2021", 17],
-        ["Travel_HillsideColor.jpg", "15/07/2021", 25],
-        ["Travel_Lonesome.jpg", "15/07/2021", 25]
+        {
+          "name": "Animals_Rainbow.jpg", 
+          "date": "15/07/2021", 
+          "like": 20 
+        },
+        {
+          "name": "Animals_Wild_Horses_in_the_mountains.mp4", 
+          "date": "16/07/2021", 
+          "like": 28 
+        }
       ]
     },
-    
+
     {
       "name": "Ellie-Rose Wilkens",
       "id": 930,
