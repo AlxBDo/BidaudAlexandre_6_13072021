@@ -1,0 +1,30 @@
+#contact-form-link {
+    background-color: var(--first-color-dark);
+    padding: 4%;
+    margin-top: 5%;
+    display: inline-block;
+    color: white;
+    border-radius: 5px;
+}
+main {
+    margin: 0 7%;
+  }
+#photographer-informations {
+display: flex;
+background-color: var(--second-color-light);
+max-height: 300px;
+}
+#photographer-informations div {
+width: 30%;
+overflow: hidden;
+margin: 4%;
+}
+#photographer-informations div img {
+width: 39%;
+object-fit: cover;
+border-radius: 86px;
+height: 99%;
+}
+#photographer-informations div:last-child {
+text-align: right;
+}

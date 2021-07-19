@@ -15,8 +15,16 @@ class jsonDataCollector {
                     for(let photographer of value['photographers']){
                         if(
                             !keySearched 
-                            || photographer[keySearched].includes(valueSearched)
-                        ){ new photoShortProfilDisplay(photographer).show(); }
+                            || (keySearched === "tags" 
+                            && photographer[keySearched].includes(valueSearched))
+                        ){ 
+                            new photoShortProfilDisplay(photographer).show(); 
+                        } else if(
+                            keySearched === "id" 
+                            && parseInt(photographer.id) === parseInt(valueSearched)
+                        ){
+                            new photographerLongProfilDisplay(photographer).show();
+                        }
                     }
                 }
             })

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Photographer page</title>
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/photographer_page.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans" />
+    </head>
+    <body>
+        <header>
+            <a href="index.html" id="fishEye-HomePage">
+                <img 
+                    src="img/Fisheye_logo.svg" 
+                    alt="Fisheye Home page" 
+                    title="Fisheye logo" 
+                />
+            </a>
+        </header>
+        <main>
+            <section id="photographer-informations">
+                <div>
+                    <h1 id="Name" class="first-color-text"></h1>
+                    <p id="ComeFrom"></p>
+                    <p id="Tagline"></p>
+                    <ul id="Tags"></ul>
+                </div>
+                <div>
+                    <a href="" id="contact-form-link">Contactez-moi</a>
+                </div>
+                <div>
+                    <img 
+                        id="Portrait" 
+                        title="Photographer portrait" 
+                        alt="Photographer portrait"
+                    >
+                </div>
+            </section>
+            <section id="photography-gallery">
+                <form>
+                    <label for="order-by">Trier par</label>
+                    <select id="order-by">
+                        <option value="popu" selected>Popularité</option>
+                        <option value="date">Date</option>
+                        <option value="titr">Titre</option>
+                    </select>
+                </form>
+            </section>
+        </main>
+        <script src="js/obj/jsonDataCollector.js"></script>
+        <script src="js/obj/photographerDisplay.js"></script>
+        <script src="js/obj/photographerLongProfilDisplay.js"></script>
+        <script src="js/photographer_page.js"></script>
+    </body>
+</html>

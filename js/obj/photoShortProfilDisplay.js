@@ -3,7 +3,7 @@ class photoShortProfilDisplay extends photographerDisplayAbstract {
     static htmlContainer = document.getElementById('photographers-list');
     profilContainer = document.getElementById("photographers-list");
 
-    getProfilPageLink(){ return "profil.html?id="+this.getId(); }
+    getProfilPageLink(){ return "photographer_page.html?id="+this.getId(); }
 
     static initHTMLContainer(){ this.htmlContainer.innerHTML = ""; }
 
