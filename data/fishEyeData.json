@@ -12,13 +12,62 @@
       "book":[
         {
           "name": "Animals_Rainbow.jpg", 
+          "title": "Arc-en-ciel",
           "date": "15/07/2021", 
           "like": 20 
         },
         {
-          "name": "Animals_Wild_Horses_in_the_mountains.mp4", 
+          "name": "Animals_Wild_Horses_in_the_mountains.mp4",  
+          "title": "Chevaux sauvages dans la montagne",
           "date": "16/07/2021", 
           "like": 28 
+        },
+        {
+          "name": "Event_BenevidesWedding.jpg",  
+          "title": "Mariage bénit",
+          "date": "15/07/2021", 
+          "like": 18 
+        },
+        {
+          "name": "Event_PintoWedding.jpg", 
+          "title": "Mariés et rochers", 
+          "date": "15/07/2021", 
+          "like": 13 
+        },
+        {
+          "name": "Event_SeasideWedding.jpg", 
+          "date": "15/07/2021", 
+          "like": 22 
+        },
+        {
+          "name": "Portrait_Background.jpg",  
+          "title": "Mariage à la mer",
+          "date": "15/07/2021", 
+          "like": 17 
+        },
+        {
+          "name": "Portrait_Nora.jpg",  
+          "title": "Portrait de Nora",
+          "date": "15/07/2021", 
+          "like": 17 
+        },
+        {
+          "name": "Portrait_Wednesday.jpg",  
+          "title": "Portrait de Mercredi",
+          "date": "15/07/2021", 
+          "like": 17 
+        },
+        {
+          "name": "Travel_HillsideColor.jpg",  
+          "title": "Couleur du flanc de colline",
+          "date": "15/07/2021", 
+          "like": 25 
+        },
+        {
+          "name": "Travel_Lonesome.jpg",  
+          "title": "Solitaire",
+          "date": "15/07/2021", 
+          "like": 25 
         }
       ]
     },

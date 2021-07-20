@@ -3,7 +3,7 @@ class jsonDataCollector {
     static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
 
     static search(keySearched = false, valueSearched = false){
-        fetch(this.jsonDataFile)
+        return fetch(this.jsonDataFile)
             .then(function(res){
                 if(res.ok){
                     return res.json();
@@ -24,6 +24,7 @@ class jsonDataCollector {
                             && parseInt(photographer.id) === parseInt(valueSearched)
                         ){
                             new photographerLongProfilDisplay(photographer).show();
+                            return photographer.book;
                         }
                     }
                 }
