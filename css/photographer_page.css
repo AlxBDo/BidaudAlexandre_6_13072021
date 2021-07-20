@@ -3,15 +3,34 @@
     margin-top: 5%;
     display: inline-block;
 }
+div.littl a {
+	display: flex;
+	overflow: hidden;
+	flex-wrap: wrap;
+}
 #gallery {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	overflow: hidden;
+    margin-top: 4%;
 }
 #gallery div.littl {
 	width: 30%;
 	overflow: hidden;
+	max-height: 541px;
+	margin-bottom: 2%;
+	display: flex;
+}
+#gallery div a img {
+	height: 90%;
+	object-fit: cover;
+	width: 100%;
+}
+#gallery div h2, #gallery div p {
+	width: 50%;
+	margin: 0 auto;
+	padding: 1% 0;
 }
 .hide { display: none; }
 .interactiv-element {

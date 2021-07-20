@@ -35,7 +35,8 @@
           "like": 13 
         },
         {
-          "name": "Event_SeasideWedding.jpg", 
+          "name": "Event_SeasideWedding.jpg",   
+          "title": "Mariage à la mer",
           "date": "15/07/2021", 
           "like": 22 
         },
@@ -65,7 +66,7 @@
         },
         {
           "name": "Travel_Lonesome.jpg",  
-          "title": "Solitaire",
+          "title": "Solitude",
           "date": "15/07/2021", 
           "like": 25 
         }
