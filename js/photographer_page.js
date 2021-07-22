@@ -1,6 +1,47 @@
-async function getPromiseValue(myPromiz){
-    
-}
+// Constantes
+
+const photoSum = document.getElementById("photo-sum");
+
+const videoSum = document.getElementById("video-sum");
+
+
+// Listenner
+
+/**
+ * close lightbox
+ */
+document.getElementById("close-lightbox").addEventListener("click", function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    lightboxObject.changeBookView();
+}); 
+ 
+/**
+ * change full screen image displayed
+ */
+ document.querySelectorAll(".move").forEach(element => {
+    element.addEventListener("click", function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        lightboxObject.move(element.getAttribute('id'));
+    });
+});
+
+/**
+ * open lightbox
+ */
+document.querySelectorAll("a.photo-container").forEach(element => {
+    element.addEventListener("click", function(event){
+        event.preventDefault();
+        if(lightboxObject.getGalleryMode() === "gallery"){
+            lightboxObject.changeBookView();
+            lightboxObject.activeElement(element);
+        }
+    });
+});
+
+
+
 
 let url = window.location.href;
 if(url.split('?')[1]){
@@ -25,4 +66,3 @@ let obj2 = {name: "ben", nombre: 25};
 let obj3 = {name: "jo", nombre: 14};
 let test = [obj1, obj2, obj3];
 test.sort(bookOrderByName);
-console.log("test trié = " + test[0].name);

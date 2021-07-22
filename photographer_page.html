@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/photographer_page.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans" />
+        <script src="https://kit.fontawesome.com/cb3cd25339.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
@@ -46,165 +47,114 @@
                         <option value="titr">Titre</option>
                     </select>
                 </form>
-                <div id="gallery">
-                    <div class="hide littl" id="photo-container-0">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-0" href="">
-                            <img id="photo-0" alt="">
-                            <h2 id="photo-title-0"></h2>
-                            <p class="like" id="likeP-0"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
+                <div id="gallery" class="gallery">
+                    <div class="button-section">
+                        <a id="previous" class="move" href=""></a>
                     </div>
-                    <div class="hide littl" id="photo-container-1">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-1" href="">
-                            <img id="photo-1" alt="">
-                            <h2 id="photo-title-1"></h2>
-                            <p class="like" id="likeP-1"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
+                    <a class="photo-container hide" id="photo-container-0" href="">
+                        <img id="photo-0" alt="">
+                        <h2 id="photo-title-0"></h2>
+                        <p class="like">
+                            <span id="likeP-0"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-1" href="">
+                        <img id="photo-1" alt="">
+                        <h2 id="photo-title-1"></h2>
+                        <p class="like">
+                            <span id="likeP-1"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-2" href="">
+                        <img id="photo-2" alt="">
+                        <h2 id="photo-title-2"></h2>
+                        <p class="like">
+                            <span id="likeP-2"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-3" href="">
+                        <img id="photo-3" alt="">
+                        <h2 id="photo-title-3"></h2>
+                        <p class="like">
+                            <span id="likeP-3"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-4" href="">
+                        <img id="photo-4" alt="">
+                        <h2 id="photo-title-4"></h2>
+                        <p class="like">
+                            <span id="likeP-4"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-5" href="">
+                        <img id="photo-5" alt="">
+                        <h2 id="photo-title-5"></h2>
+                        <p class="like">
+                            <span id="likeP-5"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-6" href="">
+                        <img id="photo-6" alt="">
+                        <h2 id="photo-title-6"></h2>
+                        <p class="like">
+                            <span id="likeP-6"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-7" href="">
+                        <img id="photo-7" alt="">
+                        <h2 id="photo-title-7"></h2>
+                        <p class="like">
+                            <span id="likeP-7"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-8" href="">
+                        <img id="photo-8" alt="">
+                        <h2 id="photo-title-8"></h2>
+                        <p class="like">
+                            <span id="likeP-8"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="photo-container-9" href="">
+                        <img id="photo-9" alt="">
+                        <h2 id="photo-title-9"></h2>
+                        <p class="like">
+                            <span id="likeP-9"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <a class="photo-container hide" id="video-container-0" href="">
+                        <video id="video-0" controls> </video>
+                        <h2 id="video-title-0"></h2>
+                        <p class="like">
+                            <span id="likeV-0"></span> 
+                            <i class="fas fa-heart"></i>
+                        </p>
+                    </a>
+                    <div class="button-section">
+                        <a id="close-lightbox" href=""></a>
+                        <a id="next" class="move" href=""></a>
                     </div>
-                    <div class="hide littl" id="photo-container-2">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-2" href="">
-                            <img id="photo-2" alt="">
-                            <h2 id="photo-title-2"></h2>
-                            <p class="like" id="likeP-2"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="photo-container-3">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-3" href="">
-                            <img id="photo-3" alt="">
-                            <h2 id="photo-title-3"></h2>
-                            <p class="like" id="likeP-3"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="photo-container-4">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-4" href="">
-                            <img id="photo-4" alt="">
-                            <h2 id="photo-title-4"></h2>
-                            <p class="like" id="likeP-4"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="photo-container-5">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-5" href="">
-                            <img id="photo-5" alt="">
-                            <h2 id="photo-title-5"></h2>
-                            <p class="like" id="likeP-5"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="photo-container-6">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-6" href="">
-                            <img id="photo-6" alt="">
-                            <h2 id="photo-title-6"></h2>
-                            <p class="like" id="likeP-6"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="photo-container-7">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-7" href="">
-                            <img id="photo-7" alt="">
-                            <h2 id="photo-title-7"></h2>
-                            <p class="like" id="likeP-7"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="photo-container-8">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-8" href="">
-                            <img id="photo-8" alt="">
-                            <h2 id="photo-title-8"></h2>
-                            <p class="like" id="likeP-8"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="photo-container-9">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a id="photo-link-9" href="">
-                            <img id="photo-9" alt="">
-                            <h2 id="photo-title-9"></h2>
-                            <p class="like" id="likeP-9"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
-                    <div class="hide littl" id="video-container-0">
-                        <div class="button-section">
-                            <a id="previous"></a>
-                        </div>
-                        <a href="">
-                            <video id="video-0" controls>
-                                Si votre navigateur ne vous permets pas de lire cette vidéo, 
-                                vous trouverez ci-après un lien pour la télécharger : 
-                                <a id="video-0-download-link" alt="Télécharger la vidéo"></a>
-                            </video>
-                            <h2 id="video-title-0"></h2>
-                            <p class="like" id="likeV-0"></p>
-                        </a>
-                        <div class="button-section">
-                            <a id="close-lightbox"></a>
-                            <a id="next"></a>
-                        </div>
-                    </div>
+                <!-- 
+                    input used to store necessary information
+                    how the media viewer works
+                -->
+                    <!-- media type of active element -->
+                    <input type="hidden" id="current-element-type" value="photo">
+                    <!-- number of active element -->
+                    <input type="hidden" id="lightbox-position">
+                    <!-- photos sum -->
+                    <input type="hidden" id="photo-sum">
+                    <!-- vidéos sum -->
+                    <input type="hidden" id="video-sum">
                 </div>
             </section>
             <section id="further-information">
@@ -215,6 +165,7 @@
         <script src="js/obj/jsonDataCollector.js"></script>
         <script src="js/obj/photographerDisplay.js"></script>
         <script src="js/obj/photographerLongProfilDisplay.js"></script>
+        <script src="js/obj/lightbox.js"></script>
         <script src="js/photographer_page.js"></script>
     </body>
 </html>

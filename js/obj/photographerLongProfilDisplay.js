@@ -25,6 +25,7 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
     showBook(book, photographer_name){
         if(Array.isArray(book)){
             let photo_number = 0;
+            let video_number = 0;
             let photo_path = "img/photos/"+photographer_name+"/";
             for(let work of book){
                 // test picture or video
@@ -37,13 +38,15 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
                     document.getElementById("likeP-"+photo_number).textContent = work.like;
                     photo_number++;
                 } else if(name_split[1] === 'mp4'){
-                    document.getElementById("video-container-0").classList.remove("hide");
-                    document.getElementById("video-0").setAttribute("src", photo_path+work.name);
-                    document.getElementById("video-0-download-link")
-                    .setAttribute("href", photo_path+work.name);
-                    document.getElementById("likeV-0").textContent = work.like;
+                    document.getElementById("video-container-"+video_number).classList.remove("hide");
+                    document.getElementById("video-"+video_number).setAttribute("src", photo_path+work.name);
+                    document.getElementById("video-title-"+video_number).textContent = work.title;
+                    document.getElementById("likeV-"+video_number).textContent = work.like;
+                    video_number++;
                 }
             }
+            photoSum.value = photo_number;
+            videoSum.value = video_number;
         }
     }
 

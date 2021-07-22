@@ -11,7 +11,6 @@ class jsonDataCollector {
             })
             .then(function(value){
                 if(Array.isArray(value['photographers'])){
-                    let photographers = [];
                     for(let photographer of value['photographers']){
                         if(
                             !keySearched 
@@ -24,7 +23,6 @@ class jsonDataCollector {
                             && parseInt(photographer.id) === parseInt(valueSearched)
                         ){
                             new photographerLongProfilDisplay(photographer).show();
-                            return photographer.book;
                         }
                     }
                 }
