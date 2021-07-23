@@ -1,34 +1,26 @@
 const lightboxObject = {
 
-    currentMediaType : document.getElementById("current-element-type"),
-
-    gallery : document.getElementById("gallery"),
-
-    galleryClassList : gallery.classList,
+    galleryClassList : GALLERY.classList,
 
     lightboxPosition : document.getElementById("lightbox-position"),
 
 
     getCurrentPosition : function(){ return parseInt(this.lightboxPosition.value); },
 
-    getDomElementPosition : function(domElementObject){
-        return domElementObject.getAttribute("id").split("-")[2];
-    },
-
     getGalleryMode : function(){ 
         return this.galleryClassList.contains("gallery") ? "gallery" : "lightbox" ; 
     },
 
     getNewIdHTML : function(newPosition){
-        let currentType = document.getElementById("current-element-type").value;
+        let currentType = CURRENT_MEDIA_TYPE.value;
         let limit = currentType === "photo" 
-                    ? photoSum.value : videoSum.value ;
+                    ? PHOTO_SUM.value : VIDEO_SUM.value ;
         if(newPosition >= limit || newPosition < 0) { 
             newPosition = newPosition < 0 && currentType === "video" 
-                            ? photoSum.value - 1 : 0 ; 
-            if(currentType === "photo" && videoSum.value > 0){
+                            ? PHOTO_SUM.value - 1 : 0 ; 
+            if(currentType === "photo" && VIDEO_SUM.value > 0){
                 currentType = "video";
-            } else if(currentType === "video" && photoSum.value > 0){
+            } else if(currentType === "video" && PHOTO_SUM.value > 0){
                 currentType = "photo";
             }
         }
@@ -38,15 +30,15 @@ const lightboxObject = {
 
     setCurrentPosition : function(position){ this.lightboxPosition.value = position; },
 
-    setCurrentType : function(media_type){ this.currentMediaType.value = media_type ; },
+    setCurrentType : function(media_type){ CURRENT_MEDIA_TYPE.value = media_type ; },
     
 
-    activeElement : function(domElementObject){
-        this.addActivClass(domElementObject);
-        this.setCurrentPosition(this.getDomElementPosition(domElementObject));
+    activeElement : function(dom_element_obj){
+        this.addActivClass(dom_element_obj);
+        this.setCurrentPosition(bookHandler.getDomElementIdArray(dom_element_obj)[2]);
     },
 
-    addActivClass : function(domElementObject){ domElementObject.classList.add("activ"); },
+    addActivClass : function(dom_element_obj){ dom_element_obj.classList.add("activ"); },
 
     changeBookView : function(){
         let classRemoved = this.getGalleryMode();

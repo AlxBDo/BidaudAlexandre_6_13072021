@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/photographer_page.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans" />
-        <script src="https://kit.fontawesome.com/cb3cd25339.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
@@ -39,105 +38,90 @@
                 </div>
             </section>
             <section id="book">
-                <form>
+                <form class="flex">
                     <label for="order-by">Trier par</label>
-                    <select id="order-by" class="interactiv-element">
-                        <option value="popu" selected>Popularité</option>
-                        <option value="date">Date</option>
-                        <option value="titr">Titre</option>
+                    <select id="order-by-select" class="hidden">
+                        <option id="popu-opt" value="popu" selected>Popularité</option>
+                        <option id="date-opt" value="date">Date</option>
+                        <option id="titr-opt" value="titr">Titre</option>
                     </select>
+                    <div id="order-by" class="interactiv-element absolute">
+                        <div id="order-by-container">
+                            <p id="like">Popularité</p>
+                            <p id="date">Date</p>
+                            <p id="title">Titre</p>
+                        </div>
+                    </div>
                 </form>
                 <div id="gallery" class="gallery">
                     <div class="button-section">
                         <a id="previous" class="move" href=""></a>
                     </div>
-                    <a class="photo-container hide" id="photo-container-0" href="">
+                    <a class="hidden media" id="photo-container-0" href="">
                         <img id="photo-0" alt="">
                         <h2 id="photo-title-0"></h2>
-                        <p class="like">
-                            <span id="likeP-0"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p id="photo-like-0" class="like"></p>
+                        <p id="photo-date-0" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-1" href="">
+                    <a class="hidden media" id="photo-container-1" href="">
                         <img id="photo-1" alt="">
                         <h2 id="photo-title-1"></h2>
-                        <p class="like">
-                            <span id="likeP-1"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-1"></p>
+                        <p id="photo-date-1" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-2" href="">
+                    <a class="hidden media" id="photo-container-2" href="">
                         <img id="photo-2" alt="">
                         <h2 id="photo-title-2"></h2>
-                        <p class="like">
-                            <span id="likeP-2"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-2"></p>
+                        <p id="photo-date-2" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-3" href="">
+                    <a class="hidden media" id="photo-container-3" href="">
                         <img id="photo-3" alt="">
                         <h2 id="photo-title-3"></h2>
-                        <p class="like">
-                            <span id="likeP-3"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-3"></p>
+                        <p id="photo-date-3" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-4" href="">
+                    <a class="hidden media" id="photo-container-4" href="">
                         <img id="photo-4" alt="">
                         <h2 id="photo-title-4"></h2>
-                        <p class="like">
-                            <span id="likeP-4"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-4"></p>
+                        <p id="photo-date-4" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-5" href="">
+                    <a class="hidden media" id="photo-container-5" href="">
                         <img id="photo-5" alt="">
                         <h2 id="photo-title-5"></h2>
-                        <p class="like">
-                            <span id="likeP-5"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-5"></p>
+                        <p id="photo-date-5" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-6" href="">
+                    <a class="hidden media" id="photo-container-6" href="">
                         <img id="photo-6" alt="">
                         <h2 id="photo-title-6"></h2>
-                        <p class="like">
-                            <span id="likeP-6"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-6"></p>
+                        <p id="photo-date-6" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-7" href="">
+                    <a class="hidden media" id="photo-container-7" href="">
                         <img id="photo-7" alt="">
                         <h2 id="photo-title-7"></h2>
-                        <p class="like">
-                            <span id="likeP-7"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-7"></p>
+                        <p id="photo-date-7" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-8" href="">
+                    <a class="hidden media" id="photo-container-8" href="">
                         <img id="photo-8" alt="">
                         <h2 id="photo-title-8"></h2>
-                        <p class="like">
-                            <span id="likeP-8"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-8"></p>
+                        <p id="photo-date-8" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="photo-container-9" href="">
+                    <a class="hidden media" id="photo-container-9" href="">
                         <img id="photo-9" alt="">
                         <h2 id="photo-title-9"></h2>
-                        <p class="like">
-                            <span id="likeP-9"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="photo-like-9"></p>
+                        <p id="photo-date-9" class="hidden"></p>
                     </a>
-                    <a class="photo-container hide" id="video-container-0" href="">
+                    <a class="hidden media" id="video-container-0" href="">
                         <video id="video-0" controls> </video>
                         <h2 id="video-title-0"></h2>
-                        <p class="like">
-                            <span id="likeV-0"></span> 
-                            <i class="fas fa-heart"></i>
-                        </p>
+                        <p class="like" id="video-like-0"></p>
+                        <p id="video-date-0" class="hidden"></p>
                     </a>
                     <div class="button-section">
                         <a id="close-lightbox" href=""></a>
@@ -162,9 +146,11 @@
                 <p id="Price"></p>
             </section>
         </main>
+        <script src="js/constantes_photographer_page.js"></script>
         <script src="js/obj/jsonDataCollector.js"></script>
         <script src="js/obj/photographerDisplay.js"></script>
         <script src="js/obj/photographerLongProfilDisplay.js"></script>
+        <script src="js/obj/bookHandler.js"></script>
         <script src="js/obj/lightbox.js"></script>
         <script src="js/photographer_page.js"></script>
     </body>

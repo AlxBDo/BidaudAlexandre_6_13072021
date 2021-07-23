@@ -24,29 +24,33 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
 
     showBook(book, photographer_name){
         if(Array.isArray(book)){
+            let id_number = 0;
+            let media_type = "";
             let photo_number = 0;
-            let video_number = 0;
             let photo_path = "img/photos/"+photographer_name+"/";
+            let video_number = 0;
             for(let work of book){
                 // test picture or video
                 let name_split = work.name.split(".");
                 if(name_split[1] === 'jpg'){
-                    document.getElementById("photo-container-"+photo_number).classList.remove("hide");
-                    document.getElementById("photo-"+photo_number)
-                    .setAttribute("src", photo_path+work.name);
-                    document.getElementById("photo-title-"+photo_number).textContent = work.title;
-                    document.getElementById("likeP-"+photo_number).textContent = work.like;
+                    id_number = photo_number;
+                    media_type = "photo";
                     photo_number++;
                 } else if(name_split[1] === 'mp4'){
-                    document.getElementById("video-container-"+video_number).classList.remove("hide");
-                    document.getElementById("video-"+video_number).setAttribute("src", photo_path+work.name);
-                    document.getElementById("video-title-"+video_number).textContent = work.title;
-                    document.getElementById("likeV-"+video_number).textContent = work.like;
+                    id_number = video_number;
+                    media_type = "video";
                     video_number++;
                 }
+                document.getElementById(media_type+"-container-"+id_number).classList
+                .replace("hidden", "photo-container");
+                document.getElementById(media_type+"-"+id_number)
+                .setAttribute("src", photo_path+work.name);
+                document.getElementById(media_type+"-date-"+id_number).textContent = work.date;
+                document.getElementById(media_type+"-like-"+id_number).textContent = work.like;
+                document.getElementById(media_type+"-title-"+id_number).textContent = work.title;
             }
-            photoSum.value = photo_number;
-            videoSum.value = video_number;
+            PHOTO_SUM.value = photo_number;
+            VIDEO_SUM.value = video_number;
         }
     }
 
