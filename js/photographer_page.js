@@ -1,6 +1,19 @@
 // Listenner
 
 /**
+ * add like on click
+ */
+document.querySelectorAll(".like").forEach(element => {
+    element.addEventListener("click", function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        if(!element.classList.contains("liked")){
+            bookHandler.addLikeWork(element);
+        }
+    });
+});
+
+/**
  * close lightbox
  */
 document.getElementById("close-lightbox").addEventListener("click", function(event){
@@ -17,19 +30,6 @@ document.getElementById("close-lightbox").addEventListener("click", function(eve
         event.preventDefault();
         event.stopPropagation();
         lightboxObject.move(element.getAttribute('id'));
-    });
-});
-
-/**
- * add like on click
- */
-document.querySelectorAll(".like").forEach(element => {
-    element.addEventListener("click", function(event){
-        event.preventDefault();
-        event.stopPropagation();
-        if(!element.classList.contains("liked")){
-            bookHandler.addLikeWork(element);
-        }
     });
 });
 
@@ -71,9 +71,6 @@ if(url.split('?')[1]){
     let getParams = new URLSearchParams(url.split('?')[1]);
     if(getParams.has("id")){
         jsonDataCollector.search("id", getParams.get("id"));
+        contactForm.listen();
     }
 }
-
-setTimeout(function(){
-    bookHandler.displayBookSorted("title");
-},3000);

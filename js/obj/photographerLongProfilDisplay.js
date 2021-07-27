@@ -1,14 +1,23 @@
 class photographerLongProfilDisplay extends photographerDisplayAbstract {
 
     show(){
-        let domElementToComplete = ['Name', "ComeFrom", "Tagline", "Tags", "Portrait", "Price", "Like", "Book"];
+        let domElementToComplete = [
+            'Name', 
+            "ComeFrom", 
+            "Tagline", 
+            "Tags", 
+            "Portrait", 
+            "Price", 
+            "name-title-contact", 
+            "Book"
+        ];
         domElementToComplete.forEach(element => {
             switch(element){
                 case "Book":
                     this.showBook(this.getBook(), this.getName());
                     break;
-                case "Like":
-                    // TODO gestion des likes
+                case "name-title-contact":
+                    document.getElementById(element).textContent = this.getName();
                     break;
                 case "Portrait":
                     this.setProfilImgSrc(document.getElementById("Portrait"));
@@ -29,6 +38,7 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
             let photo_number = 0;
             let photo_path = "img/photos/"+photographer_name+"/";
             let video_number = 0;
+            let sum_like = 0 ;
             for(let work of book){
                 // test picture or video
                 let name_split = work.name.split(".");
@@ -48,7 +58,9 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
                 document.getElementById(media_type+"-date-"+id_number).textContent = work.date;
                 document.getElementById(media_type+"-like-"+id_number).textContent = work.like;
                 document.getElementById(media_type+"-title-"+id_number).textContent = work.title;
+                sum_like += work.like;
             }
+            LIKE_SUM.textContent = sum_like;
             PHOTO_SUM.value = photo_number;
             VIDEO_SUM.value = video_number;
         }

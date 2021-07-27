@@ -146,12 +146,63 @@
                 <p id="Price"></p>
             </section>
         </main>
+        <section id="contact-form-modal" class="closed">
+            <form id="contact">
+                <a href="" id="close-modal-form"></a>
+                <h1>Contactez-moi <span id="name-title-contact"></span></h1>
+                <div id="first-name-info">
+                    <p>
+                        <label for="first-name">Prénom</label><br>
+                        <input type="text" id="first-name" name="first-name" maxlength="30">
+                    </p>
+                    <p class="input-info">
+                        Votre prénom doit être composé uniquement de 
+                        lettres et d'au moins 2 caractères.
+                    </p>
+                </div>
+                <div id="last-name-info">
+                    <p>
+                        <label for="last-name">Nom</label><br>
+                        <input type="text" id="last-name" name="last-name" maxlength="30">
+                    </p>
+                    <p class="input-info">
+                        Votre nom doit être composé uniquement de 
+                        lettres et d'au moins 2 caractères.
+                    </p>
+                </div>
+                <div id="email-info">
+                    <p>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email">
+                    </p>
+                    <p class="input-info">
+                        Merci de saisir une adresse email valide.
+                    </p>
+                </div>
+                <div id="message-info">
+                    <p>
+                        <label for="message">Votre message</label><br />
+                        <textarea id="message" name="message"></textarea>
+                    </p>
+                    <p class="input-info">
+                        Votre message doit être composé d'au moins 15 caractères et ne doit 
+                        pas dépasser 300.
+                    </p>
+                </div>
+                <input type="submit" value="Envoyer">
+            </form>
+            <div id="send-message">
+                <p>Merci pour votre message !</p>
+                <p>Celui-ci a bien été envoyé à <span id="recipient-name"></span>.</p>
+            </div>
+        </section>
         <script src="js/constantes_photographer_page.js"></script>
         <script src="js/obj/jsonDataCollector.js"></script>
         <script src="js/obj/photographerDisplay.js"></script>
         <script src="js/obj/photographerLongProfilDisplay.js"></script>
         <script src="js/obj/bookHandler.js"></script>
         <script src="js/obj/lightbox.js"></script>
+        <script src="js/obj/contactForm.js"></script>
         <script src="js/photographer_page.js"></script>
     </body>
 </html>

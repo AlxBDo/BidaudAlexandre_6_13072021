@@ -10,7 +10,6 @@ a { text-decoration: none; }
 .absolute { position: absolute; }
 body {
     font: normal normal 18px var(--font-fam);
-    line-height : 15.62px;
 }
 .first-color-text { color: var(--first-color-dark) ; }
 #fishEye-HomePage {

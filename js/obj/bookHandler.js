@@ -23,6 +23,7 @@ const bookHandler = {
     addLikeWork : function(dom_element_obj){
         if(typeof dom_element_obj === "object"){
             dom_element_obj.textContent = parseInt(dom_element_obj.textContent) + 1 ;
+            LIKE_SUM.textContent = parseInt(LIKE_SUM.textContent) + 1 ;
         }
     },
 
@@ -36,7 +37,13 @@ const bookHandler = {
         let counter = 1;
         for(let work of this.getElementsArray(orderBy)){
             if(work.id && work.id != ""){
-                document.getElementById(work.id).style.order = counter;
+                let media_element = document.getElementById(work.id);
+                let delai = (parseInt(work.id.split('-')[2])*75);
+                media_element.style.order = counter;
+                media_element.classList.add("invisible");
+                setTimeout(function(){
+                    media_element.classList.remove("invisible");
+                }, delai);
                 counter++;
             }
         }
