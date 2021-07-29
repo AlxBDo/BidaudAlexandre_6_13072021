@@ -93,6 +93,7 @@ const contactForm = {
         this.close_modal_btn.addEventListener("click", event => {
             event.preventDefault();
             MODAL_CF_CLASSLIST.replace("opened", "closed");
+            document.getElementById("fishEye-HomePage").focus();
         });
     },
 
@@ -128,7 +129,8 @@ const contactForm = {
     open: function(){
         this.open_form_link.addEventListener("click", event => {
             event.preventDefault();
-            MODAL_CF_CLASSLIST.replace("closed", "opened");;
+            MODAL_CF_CLASSLIST.replace("closed", "opened");
+            this.close_modal_btn.focus();
         });
     },
 

@@ -25,6 +25,7 @@ class photographerDisplayAbstract {
                 // span creation and insertion to li
                 let span = document.createElement("span");
                 span.textContent = element;
+                span.ariaLabel = "Tag";
                 li.append(span);
                 // elements created insertion to ulDomElementObj
                 ulDomElementObj.append(li);
@@ -36,14 +37,15 @@ class photographerDisplayAbstract {
 
     getPortrait(){ return this.jdo.portrait; }
 
-    getPrice(){ return this.jdo.price+"€/jour"; }
+    getPrice(){ return this.jdo.price+"€ / jour"; }
 
     getTagline(){ return this.jdo.tagline; }
 
     getTags(){ return this.jdo.tags; }
 
     setProfilImgSrc(imgHtmlElement){ 
-        imgHtmlElement.setAttribute('src', this.profilImgPath + this.getPortrait()); 
+        imgHtmlElement.setAttribute('src', this.profilImgPath + this.getPortrait());
+        imgHtmlElement.setAttribute('atl', this.getName()+"'s photo profil"); 
     }
     
 }

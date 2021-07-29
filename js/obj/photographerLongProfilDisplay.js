@@ -51,10 +51,12 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
                     media_type = "video";
                     video_number++;
                 }
-                document.getElementById(media_type+"-container-"+id_number).classList
-                .replace("hidden", "photo-container");
-                document.getElementById(media_type+"-"+id_number)
-                .setAttribute("src", photo_path+work.name);
+                let media_ctnr = document.getElementById(media_type+"-container-"+id_number);
+                media_ctnr.classList.replace("hidden", "photo-container");
+                media_ctnr.setAttribute("aria-label", work.title+", closeup view");
+                let media = document.getElementById(media_type+"-"+id_number);
+                media.setAttribute("src", photo_path+work.name);
+                media.setAttribute("aria-label", work.title);
                 document.getElementById(media_type+"-date-"+id_number).textContent = work.date;
                 document.getElementById(media_type+"-like-"+id_number).textContent = work.like;
                 document.getElementById(media_type+"-title-"+id_number).textContent = work.title;

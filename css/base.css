@@ -10,6 +10,7 @@ a { text-decoration: none; }
 .absolute { position: absolute; }
 body {
     font: normal normal 18px var(--font-fam);
+	font-size: 18px;
 }
 .first-color-text { color: var(--first-color-dark) ; }
 #fishEye-HomePage {
@@ -24,28 +25,35 @@ header img {
 .hidden{ display: none ; }
 .inline-block{ display: inline-block;}
 li { list-style: none; }
-.name-photographer { color: var(--first-color-light); }
+.name-photographer { 
+	color: var(--first-color-light); 
+	font-weight: normal;
+}
 nav a { margin-right: 1%; }
 .profil img {
 	object-fit: cover;
 	border-radius: 100%;
 }
 .profil p:first-of-type { color: var(--first-color-dark); }
-.profil p:last-of-type {
-	color: var(--second-color-dark);
-	font-size: small;
-}
-.profil p:nth-of-type(2) {
-	color: black;
-	font-size: 0.8em;
-}
+.profil p:last-of-type { color: var(--second-color-dark); }
+.profil ul { margin-top: 5px; }
 .tags {
 	border: 1px solid #C4C4C4;
 	border-radius: 20px;
-	padding: 5px;
-	font-size: 0.8em;
+	padding: 2px 5px;
+	font-size: small;
 	font-weight: bold;
+	margin: 0 1%;
+}
+.tags:hover {
+    background-color: var(--first-color-dark);
+    color: white;
+    font-weight: normal;
+	border-color: var(--first-color-dark);
 }
 .tags span::before{ content: "#"; }
-ul { margin: 0; }
+ul { 
+	margin: 0; 
+	padding: 0;
+}
 ul.flex { justify-content: center; }

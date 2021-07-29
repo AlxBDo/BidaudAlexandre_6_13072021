@@ -1,7 +1,8 @@
 h1 {
-	right: 8%;
-	top: 3%;
-	font-size: 2em;
+	right: 3%;
+	top: 1%;
+	font-size: 1.85em;
+	font-weight: normal;
 }
 header {
 	width: 70%;
@@ -11,11 +12,14 @@ header {
 	align-items: flex-end;
 }
 header nav {
-    padding: 1% 0;
+    padding: 1% 0 2%;
 	margin: 0 auto;
     text-align: center;
 }
+header nav li { margin-right: 1%; }
+.name-photographer { margin: 5% auto 0%; }
 nav ul { width: 100%; }
+nav .tags { display: inherit; }
 #pass-cont {
 	background-color: #DB8876;
 	color: black;
@@ -23,26 +27,34 @@ nav ul { width: 100%; }
 	line-height: 1.5em;
 	border-radius: 5px;
 	text-align: center;
-	padding: 3px;
+	padding: 3px 10px;
 	position: fixed;
 	margin-left: 45%;
-	width: 10%;
+    top: 5px;
+	z-index: 9;
 }
 #photographers-list {
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	margin: 10% auto 0;
 }
 #photographers-list .profil {
-	width: 30%;
+	width: 26%;
+    min-height: 375px;
 	overflow: hidden;
 	flex-direction: column;
 	text-align: center;
-	padding: 1%;
+	margin: 2% auto;
 }
-#photographers-list .profil p {
-	margin: 0px auto 10px;
+.profil p {
+	margin: 0px auto 3px;
+	font-size: x-small;
 }
+.profil p:first-of-type { 
+	font-size: small; 
+	margin-top: 5px;
+}
+.profil p:nth-of-type(2) { color: black; }
 .profil img {
 	width: 50%;
 	margin: 0 auto;

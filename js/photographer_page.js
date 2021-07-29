@@ -47,14 +47,21 @@ document.getElementById("close-lightbox").addEventListener("click", function(eve
 });
 
 /** open or close order by select */
-document.getElementById("order-by").addEventListener("click", function(){
-    if(this.classList.contains("open")){ this.classList.remove("open"); 
-    } else { this.classList.add("open"); }
+document.getElementById("order-by").addEventListener("click", function(event){
+    event.preventDefault();
+    if(this.classList.contains("open")){ 
+        this.classList.remove("open"); 
+        this.setAttribute("aria-expanded", false);
+    } else { 
+        this.classList.add("open"); 
+        this.setAttribute("aria-expanded", true); 
+    }
 })
 
 /** selected order option */
-document.querySelectorAll("#order-by p").forEach(element => {
-    element.addEventListener("click", function(){
+document.querySelectorAll("#order-by a").forEach(element => {
+    element.addEventListener("click", function(event){
+        event.preventDefault();
         ORDERBY_CONTAINER_CLASSLIST.remove("date-slct", "title-slct");
         let id_html = element.getAttribute("id");
         document.getElementById("order-by-select").selectedIndex 

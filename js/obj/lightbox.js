@@ -43,7 +43,14 @@ const lightboxObject = {
     changeBookView : function(){
         let classRemoved = this.getGalleryMode();
         let classAdded = classRemoved === "gallery" ? "lightbox" : "gallery";
-        if(classAdded != "lightbox"){ this.clearActivClass(); }
+        if(classAdded != "lightbox"){ 
+            GALLERY.setAttribute("role", "none");
+            GALLERY.setAttribute("aria-label", "media gallery");
+            this.clearActivClass(); 
+        } else {
+            GALLERY.setAttribute("role", "dialog");
+            GALLERY.setAttribute("aria-label", "image closeup view");
+        }
         this.changeGalleryClass(classAdded, classRemoved);
     },
 
