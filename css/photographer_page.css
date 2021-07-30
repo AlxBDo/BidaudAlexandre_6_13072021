@@ -11,17 +11,10 @@
 }
 #close-modal-form {
 	float: right;
-	content: url("../img/icons/close-icon-btn.png");
+	background-image: url("../img/icons/close-icon-btn.png");
+	background-size: contain;
 }
-#contact {
-	background-color: var(--first-color-light);
-	padding: 2%;
-	margin: 5% auto 0;
-}
-#contact, #send-message {
-	width: 500px;
-	max-width: 90%;
-}
+#contact { background-color: var(--first-color-light); }
 #contact div.err .input-info {
 	transform: translateY(0);
 	opacity: 1;
@@ -31,6 +24,7 @@
 	font-weight: bold;
 }
 #contact div p { margin: 0; }
+#contact h1 { font-weight: normal; }
 #contact input, #contact textarea {
 	border: none;
 	border-radius: 5px;
@@ -38,8 +32,6 @@
 #contact input[type="submit"] {
 	background-color: var(--first-color-dark);
 	color: white;
-	font-weight: bold;
-	padding: 4% 8%;
 	cursor: pointer;
 }
 #contact .input-info {
@@ -58,14 +50,8 @@
 #contact p input, #contact textarea {
 	width: 95%;
 	margin: auto;
-	padding: 2%;
+	padding: 4% 2%;
 	font-size: large;
-}
-#contact-form-link {
-    padding: 25px 4%;
-    margin-top: 5%;
-    display: inline-block;
-	font-size: medium;
 }
 #contact-form-modal {
 	position: fixed;
@@ -100,43 +86,34 @@
 	transition-delay: 0ms;
 }
 .err::before {
-	float: right;
 	content: "!";
 	color: var(--first-color-light);
 	border: 2px solid;
 	border-radius: 25px;
 	width: 25px;
 	text-align: center;
-	margin: 38px 20px -35px;
-	position: relative;
-	z-index: 9;
 	font-weight: bold;
 }
-#further-information {
-	position: fixed;
-	right: 3%;
-	width: 222px;
-	background-color: var(--first-color-light);
-	border-radius: 5px 5px 0 0;
-	bottom: 0;
+.err::before, .valid::before {
+	float: right;
+	margin: 50px 25px -50px;
+	position: relative;
+	z-index: 9;
 }
+#further-information { background-color: var(--first-color-light); }
 #further-information p {
-    display: inline-block;
-    width: 46%;
     text-align: center;
     font-size: medium;
     font-weight: bold;
 }
 .gallery {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-top: 4%;
 	height: 70%;
 	max-height: 90%;
 }
 .gallery a img, .gallery a video {
-	height: 90%;
 	object-fit: cover;
 	width: 100%;
     border-radius: 10px;
@@ -147,12 +124,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-	font-size: large;
 }
-.gallery a h2, .gallery a p {
-	width: 50%;
-	padding: 1% 0;
-}
+.gallery a h2, .gallery a p { width: 50%; }
 .gallery a p {
 	text-align: right;
 	font-weight: bold;
@@ -160,15 +133,12 @@
 }
 .gallery .button-section { display: none ;}
 .gallery .photo-container {
-    width: 29%;
-    height: 25%;
     margin-bottom: 2%;
     display: flex;
     flex-wrap: wrap;
     transition: opacity 300ms;
 }
 h1 {
-	font-size: 3em;
 	padding: 0;
 	margin: 0;
 }
@@ -193,25 +163,17 @@ h1 {
 	display: flex;
 }
 .lightbox a {
-	width: 60%;
-	display: none;
 	overflow: hidden;
-	height: 90%;
-	margin: auto;
+	display: none;
 }
 .lightbox a.activ {
 	display: flex;
 	flex-direction: column;
 }
 .lightbox a.activ img, .lightbox a.activ video {
-	width: 80%;
 	height: 100%;
 	object-fit: cover;
 	margin: 0 auto;
-}
-.lightbox .button-section {
-	height: 100%;
-	width: 20%;
 }
 .lightbox .button-section:first-of-type {
 	order: 0;
@@ -223,15 +185,9 @@ h1 {
 	display: block;
 	background-repeat: no-repeat;
 	background-position-y: center;
-	margin: auto;
 	width: 80%;
 }
-.lightbox h2 {
-	padding: 1% 0;
-	width: 80%;
-	text-align: left;
-	font-size: x-large;
-}
+.lightbox h2 { text-align: left; }
 .lightbox .like {
 	display: none;
 }
@@ -248,9 +204,7 @@ h1 {
     background-image: url("../img/icons/like_b.svg");
 }
 main {
-    margin: 0 7%;
-	overflow: hidden;
-	height: 89%;
+    overflow: hidden;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -259,15 +213,11 @@ main {
 	width: 15px;
 	height: 15px;
 }
-#next {
-	background-position-x: left;
-	background-image: url("../img/icons/next.svg");
-	height: 70%;
-	margin-top: 30%;
-}
+#message{ resize: none; }
+#next { background-image: url("../img/icons/next.svg"); }
 #order-by {
 	padding: 5px 10px 10px;
-	height: 40px;
+	height: 30px;
 	overflow: hidden;
 	cursor: pointer;
 	margin: -10px 0 0 85px;
@@ -275,7 +225,7 @@ main {
 	border: none;
     text-align: left;
 }
-#order-by ul {
+#order-by p {
 	margin: 0;
 	padding: 0;
 	transition: all 250ms;
@@ -293,7 +243,7 @@ main {
 #order-by::before {
 	content: url("../img/icons/dropdown-close.png");
 	float: right;
-	margin-top: 10px;
+	margin-top: 6px;
 }
 #order-by-container.date-slct { transform: translateY(-36px); }
 #order-by-container.title-slct { transform: translateY(-70px); }
@@ -302,37 +252,18 @@ main {
 #order-by.open::before { content: url("../img/icons/dropdown-open.png"); }
 #order-by.open a:not(#title) { border-color: white; }
 #order-by-container a:hover { color: white; }
-#photographer-informations {
-    display: flex;
-    background-color: var(--second-color-light);
-    margin: 2% auto;
-	max-height: 45%;
-}
-#photographer-informations div { margin: 4% auto 1%; }
-#photographer-informations div:last-of-type {
-    width: 20%;
-    margin-right: 4%;
-}
-#photographer-informations div:nth-of-type(2) { width: 40%; }
+#photographer-informations { display: flex; }
 #photographer-informations div img {
-    width: 75%;
     object-fit: cover;
     border-radius: 100%;
     height: 75%;
-}
-#photographer-informations div:last-child { text-align: right; }
-#photographer-informations .profil {
-    width: 40%;
-    margin-left: 4%;
 }
 #previous {
 	background-image: url("../img/icons/previous.svg");
 	background-position-x: right;
 	height: 100%;
 }
-.profil p { margin: 5px 0 15px; }
-.profil p:last-of-type { font-size: small; }
-.profil p:nth-of-type(2) { font-size: 0.8em; }
+.profil p:last-of-type { font-size: 0.8em; }
 #send-message {
 	position: absolute;
 	background-color: var(--second-color-dark);
@@ -346,6 +277,9 @@ main {
 	left: 0;
 	right: 0;
 	transition: transform 300ms;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 #send-message p:first-of-type {
 	font-size: xx-large;
@@ -355,20 +289,212 @@ main {
 	margin: 0 auto 15%;
 }
 .submitted #send-message { transform: translate(0); }
-textarea{ 
-	height: 80px;
-	resize: none;
-}
 .valid::before {
 	content: "";
-	float: right;
 	border-width: 2px 2px 0 0;
 	border-style: solid;
 	border-color: green;
 	width: 15px;
 	height: 10px;
 	transform: rotate(135deg);
-	margin: 43px 25px -25px;
-	z-index: 9;
-	position: relative;
+}
+
+@media screen and (max-width : 1023px) {
+	#close-modal-form {
+		width: 20px;
+		height: 20px;
+	}
+	#contact { text-align: center; }
+	#contact, #send-message {
+		margin: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 0;
+		border-radius: 7px;
+	}
+	#contact #close-modal-form, #contact h1, #contact div {
+		margin: 5%;
+		text-align: left;
+	}
+	#contact div {
+		margin-top: 2%;
+		margin-bottom: 0;
+	}
+	#contact input[type="submit"] {
+		margin: 2% auto 0;
+		font-size: large;
+		font-weight: normal;
+		padding: 2% 15%;
+	}
+	#contact label {
+		display: block;
+		margin-bottom: 2%;
+	}
+	#contact-form-link { padding: 2% 10%; }
+	#book {
+		overflow: hidden;
+		min-height: 50%;
+		margin: 2% auto;
+	}
+	#book form { display: none; }
+	#book .media .like {
+		font-size: small;
+		font-weight: bold;
+	}
+	#close-lightbox { background-position: top left 3px; }
+	#fishEye-HomePage { display: block; }
+	#further-information {
+		margin: 5% auto 20%;
+		width: 80%;
+		display: flex;
+		justify-content: center;
+		border-radius: 5px;
+		padding: 2%;
+	}
+	#further-information p { margin: 0 5%; }
+	.gallery { flex-direction: column; }
+	#gallery.lightbox h2 { margin: 0; }
+	.gallery a img, .gallery a video { max-height: 200px; }
+	#gallery h2, #gallery p {
+		font-size: medium;
+		font-weight: normal;
+		padding: 2% 0;
+	}
+	h1 { font-size: 2em; }
+	header img { width: 100%; }
+	.lightbox { padding: 50% 0; }
+	.lightbox a.media {
+		width: 74%;
+		padding: 0;
+	}
+	.lightbox a.activ img, .lightbox a.activ video { width: 100%; }
+	.lightbox .button-section { width: 13%; }
+	.lightbox .button-section, .lightbox .media {
+		margin: 25% 0;
+		height: 65%;
+	}
+	.lightbox .button-section a {
+		background-size: 30%, contain;
+		margin: 0;
+	}
+	main { margin: 0 3%; }
+	#message { height: 140px; }
+	#next {
+		background-position-x: 35%, left;
+		height: 69%;
+	}
+	#photographer-informations div:nth-of-type(2) {
+	  position: fixed;
+	  bottom: 3%;
+	  margin: 0 25%;
+	  min-width: 60%;
+	}
+	#photographer-informations div:last-child {
+		width: 30%;
+		margin: 0;
+	}
+	#photographer-informations div img {
+		width: 100%;
+		box-shadow: 0 1px 7px lightgray;
+	}
+	#photographer-informations .profil {
+		width: 70%;
+		margin: 0;
+	}
+	.profil p { margin: 2px auto; }
+}
+
+@media screen and (min-width : 1024px) {
+	#close-modal-form {
+		width: 35px;
+		height: 35px;
+		margin-top: 3%;
+	}
+	#contact {
+		padding: 2%;
+		margin: 5% auto 0;
+	}
+	#contact, #send-message {
+		width: 500px;
+		max-width: 90%;
+	}
+	#contact input[type="submit"] {
+		font-weight: bold;
+		padding: 4% 8%;
+	}
+	#contact h1 { margin-bottom: 5%; }
+	#contact-form-link {
+		padding: 25px 4%;
+		margin-top: 5%;
+		display: inline-block;
+		font-size: medium;
+	}
+	#further-information {
+		position: fixed;
+		right: 3%;
+		width: 222px;
+		border-radius: 5px 5px 0 0;
+		bottom: 0;
+		height: 45px;
+	}
+	#further-information p {
+		display: inline-block;
+		width: 46%; 
+	}
+	.gallery { flex-wrap: wrap; }
+	.gallery a img, .gallery a video { height: 90%; }
+	.gallery a h2, .gallery a p { padding: 1% 0; }
+	#gallery h2, #gallery p { font-weight: large; }
+	.lightbox h2 {
+		padding: 1% 0;
+		width: 80%;
+		font-size: x-large;
+	}
+	.gallery .photo-container {
+		width: 29%; 
+		height: 25%;
+	}
+	h1 { font-size: 3em; }
+	.lightbox a.activ img, .lightbox a.activ video { width: 80%; }
+	.lightbox a.media {
+		width: 60%;
+		height: 90%;
+		margin: auto;
+	}
+	.lightbox .button-section {
+		height: 100%;
+		width: 20%;
+	}
+	.lightbox .button-section a { margin: auto; }
+	main {
+		margin: 0 7%;
+		height: 89%; 
+	}
+	#message { height: 80px; }
+	#next {
+		background-position-x: left;
+		height: 70%;
+		margin-top: 30%;
+	}
+	#photographer-informations {
+		background-color: var(--second-color-light);
+		margin: 2% auto;
+		max-height: 45%;
+	}
+	#photographer-informations div { margin: 4% auto 1%; }
+	#photographer-informations div:nth-of-type(2) { width: 40%; }
+	#photographer-informations div:last-child { 
+		width: 20%;
+		margin-right: 4%;
+		text-align: right; 
+	}
+	#photographer-informations div img { width: 75%; }
+	#photographer-informations .profil {
+		width: 40%;
+		margin-left: 4%;
+	}
+	.profil p { margin: 5px 0 15px; }
 }

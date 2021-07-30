@@ -1,11 +1,8 @@
 h1 {
 	right: 3%;
-	top: 1%;
-	font-size: 1.85em;
 	font-weight: normal;
 }
 header {
-	width: 70%;
 	top: 0;
 	left: 0;
 	text-align: left;
@@ -18,7 +15,6 @@ header nav {
 }
 header nav li { margin-right: 1%; }
 .name-photographer { margin: 5% auto 0%; }
-nav ul { width: 100%; }
 nav .tags { display: inherit; }
 #pass-cont {
 	background-color: #DB8876;
@@ -29,18 +25,11 @@ nav .tags { display: inherit; }
 	text-align: center;
 	padding: 3px 10px;
 	position: fixed;
-	margin-left: 45%;
     top: 5px;
 	z-index: 9;
 }
-#photographers-list {
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 10% auto 0;
-}
+#photographers-list { margin: 10% auto 0; }
 #photographers-list .profil {
-	width: 26%;
-    min-height: 375px;
 	overflow: hidden;
 	flex-direction: column;
 	text-align: center;
@@ -55,12 +44,59 @@ nav .tags { display: inherit; }
 	margin-top: 5px;
 }
 .profil p:nth-of-type(2) { color: black; }
-.profil img {
-	width: 50%;
-	margin: 0 auto;
-	height: 50%;
+.profil img { margin: 0 auto; }
+
+@media screen and (max-width : 1023px) {
+	#fishEye-HomePage { align-self: flex-start; }
+	h1 {
+		top: 4%;
+		font-size: large;
+	}
+	header {
+		flex-direction: column;
+		width: 100%;
+	}
+	nav ul {
+		flex-wrap: wrap;
+		width: 95%;
+	}
+	nav ul li { margin-bottom: 2%; }
+	#pass-cont { margin-left: 25%; }
+	#photographers-list {
+		margin-top: 57%;
+		flex-direction: column;
+	}
+	#photographers-list .profil {
+		width: 80%;
+		height: 380px;
+		margin-bottom: 5%;
+	}
+	.profil img {
+		width: 70%;
+		max-height: 55%;
+		margin-bottom: 5%;
+		min-height: 200px;
+	}
 }
 
-@media screen and (max-width : 1024px) {
-	.profil img { height: 40%; }
+@media screen and (min-width : 1024px) {
+	h1 {
+		top: 1%;
+		font-size: 1.85em;
+	}
+	header { width: 70%; }
+	nav ul { width: 100%; }
+	#pass-cont { margin-left: 45%; }
+	#photographers-list {
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	#photographers-list .profil {
+		width: 26%;
+		min-height: 375px;
+	}
+	.profil img {
+		width: 50%;
+		height: 50%;
+	}
 }

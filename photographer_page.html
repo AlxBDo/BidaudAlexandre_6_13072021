@@ -10,7 +10,7 @@
     </head>
     <body>
         <header>
-            <a href="index.html" id="fishEye-HomePage">
+            <a href="index.html" id="fishEye-HomePage" aria-label="Link Fisheye Home page">
                 <img 
                     src="img/Fisheye_logo.svg" 
                     alt="Fisheye Home page" 
@@ -32,7 +32,7 @@
                         id="contact-form-link" 
                         class="interactiv-element" 
                         role="button" 
-                        aria-labelledby="Contact Me"
+                        aria-label="Contact Me"
                         >Contactez-moi</a>
                 </div>
                 <div>
@@ -47,17 +47,17 @@
                         <option id="date-opt" value="date">Date</option>
                         <option id="titr-opt" value="titr">Titre</option>
                     </select>
-                    <button 
+                    <div
                         id="order-by" 
                         class="interactiv-element absolute"
-                        aria-haspopup="true" aria-expanded="false" role="button"
                     >
-                        <ul id="order-by-container" role="listbox">
-                            <li><a href="" role="option" id="like">Popularité</a></li>
-                            <li><a href="" role="option" id="date">Date</a></li>
-                            <li><a href="" role="option" id="title">Titre</a></li>
-                        </ul>
-                    </button>
+                        <p id="order-by-container" role="listbox" aria-label="Order by"
+                        aria-haspopup="true" aria-expanded="false">
+                            <a role="option" aria-label="like sort" href="" id="like">Popularité</a>
+                            <a role="option" aria-label="date sort" href="" id="date">Date</a>
+                            <a role="option" aria-label="title sort"  href="" id="title">Titre</a>
+                        </p>
+                    </div>
                 </form>
                 <div id="gallery" class="gallery">
                     <div class="button-section">
@@ -69,70 +69,70 @@
                             aria-label="Previous image"
                         ></a>
                     </div>
-                    <a class="hidden media" id="photo-container-0" href="" role="image link">
+                    <a class="hidden media" id="photo-container-0" href="" role="link">
                         <img id="photo-0" alt="">
                         <h2 id="photo-title-0"></h2>
-                        <p id="photo-like-0" class="like" aria-label="likes"></p>
+                        <p id="photo-like-0" class="like" aria-label="likes" role="text"></p>
                         <p id="photo-date-0" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-1" href="" role="image link">
+                    <a class="hidden media" id="photo-container-1" href="" role="link">
                         <img id="photo-1" alt="">
                         <h2 id="photo-title-1"></h2>
-                        <p class="like" id="photo-like-1" aria-label="likes"></p>
+                        <p class="like" id="photo-like-1" aria-label="likes" role="text"></p>
                         <p id="photo-date-1" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-2" href="" role="image link">
+                    <a class="hidden media" id="photo-container-2" href="" role="link">
                         <img id="photo-2" alt="">
                         <h2 id="photo-title-2"></h2>
-                        <p class="like" id="photo-like-2" aria-label="likes"></p>
+                        <p class="like" id="photo-like-2" aria-label="likes" role="text"></p>
                         <p id="photo-date-2" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-3" href="" role="image link">
+                    <a class="hidden media" id="photo-container-3" href="" role="link">
                         <img id="photo-3" alt="">
                         <h2 id="photo-title-3"></h2>
-                        <p class="like" id="photo-like-3" aria-label="likes"></p>
+                        <p class="like" id="photo-like-3" aria-label="likes" role="text"></p>
                         <p id="photo-date-3" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-4" href="" role="image link">
+                    <a class="hidden media" id="photo-container-4" href="" role="link">
                         <img id="photo-4" alt="">
                         <h2 id="photo-title-4"></h2>
-                        <p class="like" id="photo-like-4" aria-label="likes"></p>
+                        <p class="like" id="photo-like-4" aria-label="likes" role="text"></p>
                         <p id="photo-date-4" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-5" href="" role="image link">
+                    <a class="hidden media" id="photo-container-5" href="" role="link">
                         <img id="photo-5" alt="">
                         <h2 id="photo-title-5"></h2>
-                        <p class="like" id="photo-like-5" aria-label="likes"></p>
+                        <p class="like" id="photo-like-5" aria-label="likes" role="text"></p>
                         <p id="photo-date-5" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-6" href="" role="image link">
+                    <a class="hidden media" id="photo-container-6" href="" role="link">
                         <img id="photo-6" alt="">
                         <h2 id="photo-title-6"></h2>
-                        <p class="like" id="photo-like-6" aria-label="likes"></p>
+                        <p class="like" id="photo-like-6" aria-label="likes" role="text"></p>
                         <p id="photo-date-6" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-7" href="" role="image link">
+                    <a class="hidden media" id="photo-container-7" href="" role="link">
                         <img id="photo-7" alt="">
                         <h2 id="photo-title-7"></h2>
-                        <p class="like" id="photo-like-7" aria-label="likes"></p>
+                        <p class="like" id="photo-like-7" aria-label="likes" role="text"></p>
                         <p id="photo-date-7" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-8" href="" role="image link">
+                    <a class="hidden media" id="photo-container-8" href="" role="link">
                         <img id="photo-8" alt="">
                         <h2 id="photo-title-8"></h2>
-                        <p class="like" id="photo-like-8" aria-label="likes"></p>
+                        <p class="like" id="photo-like-8" aria-label="likes" role="text"></p>
                         <p id="photo-date-8" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="photo-container-9" href="" role="image link">
+                    <a class="hidden media" id="photo-container-9" href="" role="link">
                         <img id="photo-9" alt="">
                         <h2 id="photo-title-9"></h2>
-                        <p class="like" id="photo-like-9" aria-label="likes"></p>
+                        <p class="like" id="photo-like-9" aria-label="likes" role="text"></p>
                         <p id="photo-date-9" class="hidden"></p>
                     </a>
-                    <a class="hidden media" id="video-container-0" href="" role="image link">
+                    <a class="hidden media" id="video-container-0" href="" role="link">
                         <video id="video-0" controls> </video>
                         <h2 id="video-title-0"></h2>
-                        <p class="like" id="video-like-0" aria-label="likes"></p>
+                        <p class="like" id="video-like-0" aria-label="likes" role="text"></p>
                         <p id="video-date-0" class="hidden"></p>
                     </a>
                     <div class="button-section">
@@ -164,12 +164,12 @@
                     <input type="hidden" id="video-sum">
                 </div>
             </section>
-            <section id="further-information" role="text">
-                <p id="like-total" class="like" aria-label="Sum likes"></p>
-                <p id="Price" aria-label="Hourly price"></p>
+            <section id="further-information">
+                <p id="like-total" class="like" aria-label="Sum likes" role="text"></p>
+                <p id="Price" aria-label="Price per day" role="text"></p>
             </section>
         </main>
-        <section id="contact-form-modal" class="closed" role="dialog">
+        <section id="contact-form-modal" class="closed" role="dialog" aria-label="Contact form">
             <form id="contact">
                 <a 
                     href="" 
@@ -180,7 +180,7 @@
                 <h1>Contactez-moi <span id="name-title-contact"></span></h1>
                 <div id="first-name-info">
                     <p>
-                        <label for="first-name">Prénom</label><br>
+                        <label for="first-name">Prénom</label>
                         <input type="text" id="first-name" name="first-name" maxlength="30">
                     </p>
                     <p class="input-info">
@@ -190,7 +190,7 @@
                 </div>
                 <div id="last-name-info">
                     <p>
-                        <label for="last-name">Nom</label><br>
+                        <label for="last-name">Nom</label>
                         <input type="text" id="last-name" name="last-name" maxlength="30">
                     </p>
                     <p class="input-info">
@@ -200,7 +200,7 @@
                 </div>
                 <div id="email-info">
                     <p>
-                        <label for="email">Email</label><br>
+                        <label for="email">Email</label>
                         <input type="email" id="email" name="email">
                     </p>
                     <p class="input-info">
@@ -209,7 +209,7 @@
                 </div>
                 <div id="message-info">
                     <p>
-                        <label for="message">Votre message</label><br />
+                        <label for="message">Votre message</label>
                         <textarea id="message" name="message"></textarea>
                     </p>
                     <p class="input-info">

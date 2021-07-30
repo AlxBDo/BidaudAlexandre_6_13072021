@@ -46,6 +46,7 @@ class photographerDisplayAbstract {
     setProfilImgSrc(imgHtmlElement){ 
         imgHtmlElement.setAttribute('src', this.profilImgPath + this.getPortrait());
         imgHtmlElement.setAttribute('atl', this.getName()+"'s photo profil"); 
+        imgHtmlElement.setAttribute('role', "presentation"); 
     }
     
 }
