@@ -1,6 +1,6 @@
 class photographerDisplayAbstract {
 
-    profilImgPath = "img/photos/Profils/";
+    profilImgPath = "img/photos/Profils/" ;
 
     constructor(jsonDataObject){
         if(this.constructor === photographerDisplayAbstract){
@@ -46,7 +46,7 @@ class photographerDisplayAbstract {
     setProfilImgSrc(imgHtmlElement){ 
         imgHtmlElement.setAttribute('src', this.profilImgPath + this.getPortrait());
         imgHtmlElement.setAttribute('atl', this.getName()+"'s photo profil"); 
-        imgHtmlElement.setAttribute('role', "presentation"); 
+        imgHtmlElement.setAttribute('role', "presentation");      
     }
     
 }

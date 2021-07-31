@@ -3,6 +3,15 @@ class photoShortProfilDisplay extends photographerDisplayAbstract {
     static htmlContainer = document.getElementById('photographers-list');
     profilContainer = document.getElementById("photographers-list");
 
+    static ajustHeightImg(){
+        let photograph_profils = document.querySelectorAll(".profil img");
+        let width_screen = window.innerWidth ;
+        let height = width_screen > 1023 ? (width_screen*0.9)*0.15 : width_screen / 1.79 ;
+        photograph_profils.forEach(element => {
+            element.style.height = parseInt(height) + "px";
+        });
+    }
+
     getProfilPageLink(){ return "photographer_page.html?id="+this.getId(); }
 
     static initHTMLContainer(){ this.htmlContainer.innerHTML = ""; }

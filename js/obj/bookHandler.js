@@ -38,7 +38,7 @@ const bookHandler = {
         for(let work of this.getElementsArray(orderBy)){
             if(work.id && work.id != ""){
                 let media_element = document.getElementById(work.id);
-                let delai = (parseInt(work.id.split('-')[2])*75);
+                let delai = (parseInt(work.id.split("-")[2])*75);
                 media_element.style.order = counter;
                 media_element.classList.add("invisible");
                 setTimeout(function(){
@@ -76,4 +76,4 @@ const bookHandler = {
             : 0 ;
     }
 
-}
+};

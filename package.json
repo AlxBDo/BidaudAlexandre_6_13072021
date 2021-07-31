@@ -1,0 +1,40 @@
+{
+  "name": "bidaudalexandre_6_13072021",
+  "version": "1.0.0",
+  "description": "Fisheye web site - Open Classroom project",
+  "main": "js/index.js",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "import-fresh": "^3.3.0",
+    "js-yaml": "^3.14.1",
+    "parent-module": "^1.0.1",
+    "path-is-absolute": "^1.0.1",
+    "path-key": "^3.1.1",
+    "prelude-ls": "^1.2.1",
+    "require-from-string": "^2.0.2",
+    "punycode": "^2.1.1",
+    "resolve-from": "^4.0.0",
+    "shebang-command": "^2.0.0",
+    "shebang-regex": "^3.0.0",
+    "slice-ansi": "^4.0.0",
+    "sprintf-js": "^1.0.3",
+    "strip-ansi": "^6.0.0",
+    "string-width": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlxBDo/BidaudAlexandre_6_13072021.git"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlxBDo/BidaudAlexandre_6_13072021/issues"
+  },
+  "homepage": "https://github.com/AlxBDo/BidaudAlexandre_6_13072021#readme"
+}

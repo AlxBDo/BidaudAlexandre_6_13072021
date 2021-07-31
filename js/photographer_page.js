@@ -29,7 +29,7 @@ document.getElementById("close-lightbox").addEventListener("click", function(eve
     element.addEventListener("click", function(event){
         event.preventDefault();
         event.stopPropagation();
-        lightboxObject.move(element.getAttribute('id'));
+        lightboxObject.move(element.getAttribute("id"));
     });
 });
 
@@ -56,7 +56,7 @@ document.getElementById("order-by").addEventListener("click", function(event){
         this.classList.add("open"); 
         this.setAttribute("aria-expanded", true); 
     }
-})
+});
 
 /** selected order option */
 document.querySelectorAll("#order-by a").forEach(element => {
@@ -66,7 +66,7 @@ document.querySelectorAll("#order-by a").forEach(element => {
         let id_html = element.getAttribute("id");
         document.getElementById("order-by-select").selectedIndex 
         = id_html === "date" ? 1 : id_html === "like" ? 0 : 2 ; 
-        ORDERBY_CONTAINER_CLASSLIST.add(id_html+"-slct")
+        ORDERBY_CONTAINER_CLASSLIST.add(id_html+"-slct");
         bookHandler.displayBookSorted(id_html);        
     });
 });
@@ -74,8 +74,8 @@ document.querySelectorAll("#order-by a").forEach(element => {
 
 
 let url = window.location.href;
-if(url.split('?')[1]){
-    let getParams = new URLSearchParams(url.split('?')[1]);
+if(url.split("?")[1]){
+    let getParams = new URLSearchParams(url.split("?")[1]);
     if(getParams.has("id")){
         jsonDataCollector.search("id", getParams.get("id"));
         contactForm.listen();

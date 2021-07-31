@@ -44,7 +44,7 @@ const contactForm = {
      * @returns {boolean} true = email is correct
      */
     checkEmail: function(email){
-        return /([\w-\.]+@[\w\.]+\.{1}[\w]+)/.test(email) ? true : false;
+        return /([\w-.]+@[\w.]+\.{1}[\w]+)/.test(email) ? true : false;
     },
 
     /**
@@ -64,7 +64,7 @@ const contactForm = {
      */
     checkName: function(name){
         return name.length < 2 
-          || /[@:./\\_\{\}\[\]\(\)\|\%\*\$\£\?\!\&\~\#\`µ0-9]/.test(name) 
+          || /[@:./\\_{}[\]()|%*$£?!&~#`µ0-9]/.test(name) 
           ? false : true;
     },
 
@@ -119,7 +119,7 @@ const contactForm = {
 
     onChangeInput: function(){
         for(let ipt of this.form_dom_obj.elements){
-            ipt.addEventListener("change", event => { this.checkInput(ipt); });
+            ipt.addEventListener("change", function(){ this.checkInput(ipt); });
         }
     },
 
@@ -167,4 +167,4 @@ const contactForm = {
         container_classlist.add("valid");
     }
 
-}
+};

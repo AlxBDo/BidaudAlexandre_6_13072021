@@ -2,7 +2,7 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
 
     show(){
         let domElementToComplete = [
-            'Name', 
+            "Name", 
             "ComeFrom", 
             "Tagline", 
             "Tags", 
@@ -42,11 +42,11 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
             for(let work of book){
                 // test picture or video
                 let name_split = work.name.split(".");
-                if(name_split[1] === 'jpg'){
+                if(name_split[1] === "jpg"){
                     id_number = photo_number;
                     media_type = "photo";
                     photo_number++;
-                } else if(name_split[1] === 'mp4'){
+                } else if(name_split[1] === "mp4"){
                     id_number = video_number;
                     media_type = "video";
                     video_number++;

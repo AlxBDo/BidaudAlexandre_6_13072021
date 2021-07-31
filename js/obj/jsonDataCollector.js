@@ -1,6 +1,6 @@
 class jsonDataCollector {
 
-    static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
+static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
 
     static search(keySearched = false, valueSearched = false){
         return fetch(this.jsonDataFile)
@@ -25,6 +25,7 @@ class jsonDataCollector {
                             new photographerLongProfilDisplay(photographer).show();
                         }
                     }
+                    if(keySearched != "id"){ photoShortProfilDisplay.ajustHeightImg(); }
                 }
             })
             .catch(function(err){
