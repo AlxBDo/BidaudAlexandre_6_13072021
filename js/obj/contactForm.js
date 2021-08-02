@@ -1,4 +1,6 @@
-const contactForm = {
+import { MODAL_CF_CLASSLIST } from "../constantes_photographer_page.js";
+
+export const contactForm = {
 
     close_modal_btn : document.getElementById("close-modal-form"),
     form_dom_obj : document.getElementById("contact"),

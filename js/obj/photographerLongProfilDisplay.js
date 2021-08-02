@@ -1,7 +1,14 @@
+import {LIKE_SUM} from "../constantes_photographer_page.js";
+import {PHOTO_SUM} from "../constantes_photographer_page.js";
+import {VIDEO_SUM} from "../constantes_photographer_page.js";
+
+
+import photographerDisplayAbstract from "./photographerDisplay.js";
+
 /**
  * display photographer profil on photographer page
  */
-class photographerLongProfilDisplay extends photographerDisplayAbstract {
+export default class photographerLongProfilDisplay extends photographerDisplayAbstract {
 
     show(){
         let domElementToComplete = [

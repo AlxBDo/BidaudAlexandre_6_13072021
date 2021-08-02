@@ -1,8 +1,12 @@
+import { GALLERY_MEDIA_ELEMENTS } from "../constantes_photographer_page.js";
+import { LIKE_SUM } from "../constantes_photographer_page.js";
+import { ORDERBY_CONTAINER_CLASSLIST } from "../constantes_photographer_page.js";
+
 /**
  * handling photographer's media galery
  * {object}
  */
-const bookHandler = {
+export const bookHandler = {
 
 // media array sorted
     //- by date

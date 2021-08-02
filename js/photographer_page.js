@@ -1,3 +1,10 @@
+import jsonDataCollector from "./obj/jsonDataCollector.js";
+import {bookHandler} from "./obj/bookHandler.js";
+import {contactForm} from "./obj/contactForm.js";
+import {lightboxObject} from "./obj/lightbox.js";
+
+
+
 // get photographer id for display his profil
 let url = window.location.href;
 if(url.split("?")[1]){

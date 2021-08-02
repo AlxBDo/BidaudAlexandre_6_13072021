@@ -1,8 +1,12 @@
+import photoShortProfilDisplay from "./photoShortProfilDisplay.js";
+import photographerLongProfilDisplay from "./photographerLongProfilDisplay.js" ;
+
+
 /**
  * browse the json file to retrieve the information and execute the objects 
  * allowing them to be displayed
  */
-class jsonDataCollector {
+export default class jsonDataCollector {
 
 static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
 

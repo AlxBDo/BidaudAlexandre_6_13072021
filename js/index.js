@@ -1,3 +1,7 @@
+import photoShortProfilDisplay from "./obj/photoShortProfilDisplay.js";
+import jsonDataCollector from "./obj/jsonDataCollector.js";
+
+
 // Listenner
 
 // Tags click

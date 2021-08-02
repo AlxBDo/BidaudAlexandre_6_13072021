@@ -1,7 +1,15 @@
+import {CURRENT_MEDIA_TYPE} from "../constantes_photographer_page.js";
+import {GALLERY} from "../constantes_photographer_page.js";
+import {GALLERY_MEDIA_ELEMENTS} from "../constantes_photographer_page.js";
+import {PHOTO_SUM} from "../constantes_photographer_page.js";
+import {VIDEO_SUM} from "../constantes_photographer_page.js";
+import {bookHandler} from "./bookHandler.js";
+
+
 /**
  * Display media gallery in a lightbox
  */
-const lightboxObject = {
+ export const lightboxObject = {
 
     close_lightbox_btn : document.getElementById("close-lightbox"),
     galleryClassList : GALLERY.classList,

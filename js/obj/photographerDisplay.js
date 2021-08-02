@@ -1,4 +1,4 @@
-class photographerDisplayAbstract {
+export default class photographerDisplayAbstract {
 
     profilImgPath = "img/photos/Profils/" ;
 

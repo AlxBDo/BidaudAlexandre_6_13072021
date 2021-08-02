@@ -1,7 +1,9 @@
+import photographerDisplayAbstract from "./photographerDisplay.js";
+
 /**
  * display short profil in index page
  */
-class photoShortProfilDisplay extends photographerDisplayAbstract {
+export default class photoShortProfilDisplay extends photographerDisplayAbstract {
 
     static htmlContainer = document.getElementById('photographers-list');
     profilContainer = document.getElementById("photographers-list");
