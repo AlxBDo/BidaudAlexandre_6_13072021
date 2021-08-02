@@ -1,9 +1,18 @@
+/**
+ * browse the json file to retrieve the information and execute the objects 
+ * allowing them to be displayed
+ */
 class jsonDataCollector {
 
 static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
 
+    /**
+     * 
+     * @param {string} keySearched 
+     * @param {string} valueSearched 
+     */
     static search(keySearched = false, valueSearched = false){
-        return fetch(this.jsonDataFile)
+        fetch(this.jsonDataFile)
             .then(function(res){
                 if(res.ok){
                     return res.json();

@@ -1,16 +1,31 @@
+/**
+ * Display media gallery in a lightbox
+ */
 const lightboxObject = {
 
+    close_lightbox_btn : document.getElementById("close-lightbox"),
     galleryClassList : GALLERY.classList,
-
+    //store the current position of the Lightbox
     lightboxPosition : document.getElementById("lightbox-position"),
+    // function names's array to create listeners
+    listen_fct_names : ["closeClick", "openClick", "moveClick"],
 
 
     getCurrentPosition : function(){ return parseInt(this.lightboxPosition.value); },
 
+    /**
+     * 
+     * @returns {string} : gallery or lightbox
+     */
     getGalleryMode : function(){ 
         return this.galleryClassList.contains("gallery") ? "gallery" : "lightbox" ; 
     },
 
+    /**
+     * provide the id of the following media
+     * @param {number} newPosition
+     * @returns {array} : [0] type of current media / [1] position 
+     */
     getNewIdHTML : function(newPosition){
         let currentType = CURRENT_MEDIA_TYPE.value;
         let limit = currentType === "photo" 
@@ -28,18 +43,37 @@ const lightboxObject = {
     },
 
 
+    /**
+     * 
+     * @param {number} position 
+     */
     setCurrentPosition : function(position){ this.lightboxPosition.value = position; },
 
+    /**
+     * 
+     * @param {string} media_type 
+     */
     setCurrentType : function(media_type){ CURRENT_MEDIA_TYPE.value = media_type ; },
     
 
+    /**
+     * assign class lightbox to display media
+     * @param {object} dom_element_obj 
+     */
     activeElement : function(dom_element_obj){
         this.addActivClass(dom_element_obj);
         this.setCurrentPosition(bookHandler.getDomElementIdArray(dom_element_obj)[2]);
     },
 
+    /**
+     * 
+     * @param {string} dom_element_obj 
+     */
     addActivClass : function(dom_element_obj){ dom_element_obj.classList.add("activ"); },
 
+    /**
+     * modify view mode : gallery or lightbox
+     */
     changeBookView : function(){
         let classRemoved = this.getGalleryMode();
         let classAdded = classRemoved === "gallery" ? "lightbox" : "gallery";
@@ -54,6 +88,11 @@ const lightboxObject = {
         this.changeGalleryClass(classAdded, classRemoved);
     },
 
+    /**
+     * 
+     * @param {string} classAdded 
+     * @param {string} classRemoved 
+     */
     changeGalleryClass : function(classAdded, classRemoved){
         this.galleryClassList.remove(classRemoved);
         this.galleryClassList.add(classAdded);
@@ -62,7 +101,44 @@ const lightboxObject = {
     clearActivClass : function(){
         document.querySelector(".activ").classList.remove("activ");
     },
+    
+    /**
+     * close lightbox
+     */
+    closeClick: function(){
+        this.close_lightbox_btn.addEventListener("click", function(event){
+            event.preventDefault();
+            event.stopPropagation();
+            lightboxObject.changeBookView();
+        }); 
+    },
 
+    /**
+     * browse the array of function names and execute them to add the listeners
+     */
+    listen: function(){
+        this.listen_fct_names.forEach(element => { this[element](); });
+    },
+    
+    /**
+     * open lightbox
+     */
+    openClick: function(){
+        GALLERY_MEDIA_ELEMENTS.forEach(element => {
+            element.addEventListener("click", function(event){
+                event.preventDefault();
+                if(lightboxObject.getGalleryMode() === "gallery"){
+                    lightboxObject.changeBookView();
+                    lightboxObject.activeElement(element);
+                }
+            });
+        });
+    },
+
+    /**
+     * 
+     * @param {string} direction : next or previous
+     */
     move : function(direction = "next"){
         this.clearActivClass();
         let new_position = direction === "next" 
@@ -73,6 +149,19 @@ const lightboxObject = {
         this.activeElement(
             document.getElementById(idHTML[0]+"-container-"+idHTML[1])
         );
+    },
+     
+    /**
+     * change full screen image displayed
+     */
+    moveClick: function(){
+        document.querySelectorAll(".move").forEach(element => {
+            element.addEventListener("click", function(event){
+                event.preventDefault();
+                event.stopPropagation();
+                lightboxObject.move(element.getAttribute("id"));
+            });
+        });
     }
 
 };

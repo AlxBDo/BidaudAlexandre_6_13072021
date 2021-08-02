@@ -10,12 +10,20 @@ class photographerDisplayAbstract {
         }
     }
 
+    /**
+     * 
+     * @returns photographer's media
+     */
     getBook(){ return this.jdo.book;}
 
     getComeFrom(){ return this.jdo.city +", "+this.jdo.country; }
 
     getId(){ return this.jdo.id; }
 
+    /**
+     * 
+     * @param {object} ulDomElementObj 
+     */
     getLiTags(ulDomElementObj){
         if(typeof ulDomElementObj === 'object'){
             this.getTags().forEach(element => {
@@ -43,6 +51,10 @@ class photographerDisplayAbstract {
 
     getTags(){ return this.jdo.tags; }
 
+    /**
+     * 
+     * @param {object} imgHtmlElement : img Dom element
+     */
     setProfilImgSrc(imgHtmlElement){ 
         imgHtmlElement.setAttribute('src', this.profilImgPath + this.getPortrait());
         imgHtmlElement.setAttribute('atl', this.getName()+"'s photo profil"); 

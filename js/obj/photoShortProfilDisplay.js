@@ -1,8 +1,14 @@
+/**
+ * display short profil in index page
+ */
 class photoShortProfilDisplay extends photographerDisplayAbstract {
 
     static htmlContainer = document.getElementById('photographers-list');
     profilContainer = document.getElementById("photographers-list");
 
+    /**
+     * ajust photographer profil image in index page
+     */
     static ajustHeightImg(){
         let photograph_profils = document.querySelectorAll(".profil img");
         let width_screen = window.innerWidth ;
@@ -12,6 +18,10 @@ class photoShortProfilDisplay extends photographerDisplayAbstract {
         });
     }
 
+    /**
+     * 
+     * @returns {string} href link
+     */
     getProfilPageLink(){ return "photographer_page.html?id="+this.getId(); }
 
     static initHTMLContainer(){ this.htmlContainer.innerHTML = ""; }

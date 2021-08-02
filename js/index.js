@@ -1,3 +1,6 @@
+// Listenner
+
+// Tags click
 let tags = document.querySelectorAll(".tags");
 tags.forEach(element => {
     element.addEventListener("click", function(event){
@@ -7,8 +10,7 @@ tags.forEach(element => {
     });
 });
 
-jsonDataCollector.search();
-
+// link appear on scroll move
 window.addEventListener("scroll", function(){
     if(window.scrollY > 0){
         document.getElementById("pass-cont").classList.remove("hidden");
@@ -16,3 +18,8 @@ window.addEventListener("scroll", function(){
         document.getElementById("pass-cont").classList.add("hidden");
     }
 });
+
+
+
+// Get json Data and display
+jsonDataCollector.search();

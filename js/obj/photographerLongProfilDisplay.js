@@ -1,3 +1,6 @@
+/**
+ * display photographer profil on photographer page
+ */
 class photographerLongProfilDisplay extends photographerDisplayAbstract {
 
     show(){
@@ -31,6 +34,11 @@ class photographerLongProfilDisplay extends photographerDisplayAbstract {
         });
     }
 
+    /**
+     * display media's gallery
+     * @param {array} book : json array
+     * @param {string} photographer_name 
+     */
     showBook(book, photographer_name){
         if(Array.isArray(book)){
             let id_number = 0;

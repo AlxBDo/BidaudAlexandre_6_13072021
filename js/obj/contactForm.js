@@ -2,7 +2,9 @@ const contactForm = {
 
     close_modal_btn : document.getElementById("close-modal-form"),
     form_dom_obj : document.getElementById("contact"),
+    // store input values
     inputs_value : new Map(),
+    // function names's array to create listeners
     listen_fct_names : ["submit", "close", "open", "onChangeInput"],
     open_form_link: document.getElementById("contact-form-link"),
 
@@ -111,15 +113,18 @@ const contactForm = {
     },
 
     /**
-     * Listen Events
+     * browse the array of function names and execute them to add the listeners
      */
     listen: function(){
         this.listen_fct_names.forEach(element => { this[element](); });
     },
 
+    /**
+     * get inputs and add onchange listenner
+     */
     onChangeInput: function(){
         for(let ipt of this.form_dom_obj.elements){
-            ipt.addEventListener("change", function(){ this.checkInput(ipt); });
+            ipt.addEventListener("change", event => { this.checkInput(ipt); });
         }
     },
 
