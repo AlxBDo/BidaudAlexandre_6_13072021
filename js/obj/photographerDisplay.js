@@ -2,11 +2,12 @@ export default class photographerDisplayAbstract {
 
     profilImgPath = "img/photos/Profils/" ;
 
-    constructor(jsonDataObject){
+    constructor(photographerjsonData, mediajsonData){
         if(this.constructor === photographerDisplayAbstract){
             throw "This object can't be instancied !";
         } else {
-            this.jdo = jsonDataObject;
+            this.jdo = photographerjsonData;
+            this.media = mediajsonData;
         }
     }
 
@@ -14,7 +15,7 @@ export default class photographerDisplayAbstract {
      * 
      * @returns photographer's media
      */
-    getBook(){ return this.jdo.book;}
+    getBook(){ return this.media;}
 
     getComeFrom(){ return this.jdo.city +", "+this.jdo.country; }
 

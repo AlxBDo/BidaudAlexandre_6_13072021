@@ -56,26 +56,30 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
             let sum_like = 0 ;
             for(let work of book){
                 // test picture or video
-                let name_split = work.name.split(".");
-                if(name_split[1] === "jpg"){
-                    id_number = photo_number;
-                    media_type = "photo";
-                    photo_number++;
-                } else if(name_split[1] === "mp4"){
-                    id_number = video_number;
-                    media_type = "video";
-                    video_number++;
+                if(typeof work === "object"){
+                    let file_name = work.image ? work.image : work.video;
+                    let name_split = file_name.split(".");
+                    if(name_split[1] === "jpg"){
+                        id_number = photo_number;
+                        media_type = "photo";
+                        photo_number++;
+                    } else if(name_split[1] === "mp4"){
+                        id_number = video_number;
+                        media_type = "video";
+                        video_number++;
+                    }
+                    let media_ctnr = document.getElementById(media_type+"-container-"+id_number);
+                    media_ctnr.classList.replace("hidden", "photo-container");
+                    media_ctnr.setAttribute("aria-label", work.title+", closeup view");
+                    let media = document.getElementById(media_type+"-"+id_number);
+                    media.setAttribute("src", photo_path+file_name);
+                    media.setAttribute("aria-label", work.title);
+                    document.getElementById(media_type+"-date-"+id_number).textContent = work.date;
+                    document.getElementById(media_type+"-like-"+id_number).textContent = work.likes;
+                    document.getElementById(media_type+"-title-"+id_number).textContent = work.title;
+                    sum_like += work.likes;
                 }
-                let media_ctnr = document.getElementById(media_type+"-container-"+id_number);
-                media_ctnr.classList.replace("hidden", "photo-container");
-                media_ctnr.setAttribute("aria-label", work.title+", closeup view");
-                let media = document.getElementById(media_type+"-"+id_number);
-                media.setAttribute("src", photo_path+work.name);
-                media.setAttribute("aria-label", work.title);
-                document.getElementById(media_type+"-date-"+id_number).textContent = work.date;
-                document.getElementById(media_type+"-like-"+id_number).textContent = work.like;
-                document.getElementById(media_type+"-title-"+id_number).textContent = work.title;
-                sum_like += work.like;
+                
             }
             LIKE_SUM.textContent = sum_like;
             PHOTO_SUM.value = photo_number;

@@ -10,6 +10,18 @@ export default class jsonDataCollector {
 
 static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
 
+    static getPhotographerMedia(media_json_data_array, photographer_id){
+        if(Array.isArray(media_json_data_array)){
+            let media_array = [];
+            for(let media of media_json_data_array){
+                if(parseInt(media.photographerId) === parseInt(photographer_id)){
+                    media_array.push(media);
+                }
+            }
+            return media_array;
+        }
+    }
+
     /**
      * 
      * @param {string} keySearched 
@@ -25,17 +37,27 @@ static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/
             .then(function(value){
                 if(Array.isArray(value['photographers'])){
                     for(let photographer of value['photographers']){
+                        let medias = jsonDataCollector.getPhotographerMedia(
+                                        value['media'], 
+                                        photographer.id
+                                    );
                         if(
                             !keySearched 
                             || (keySearched === "tags" 
                             && photographer[keySearched].includes(valueSearched))
                         ){ 
-                            new photoShortProfilDisplay(photographer).show(); 
+                            new photoShortProfilDisplay(
+                                photographer, 
+                                medias
+                            ).show(); 
                         } else if(
                             keySearched === "id" 
                             && parseInt(photographer.id) === parseInt(valueSearched)
                         ){
-                            new photographerLongProfilDisplay(photographer).show();
+                            new photographerLongProfilDisplay(
+                                photographer, 
+                                medias
+                            ).show();
                         }
                     }
                     if(keySearched != "id"){ photoShortProfilDisplay.ajustHeightImg(); }

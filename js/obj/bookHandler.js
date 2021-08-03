@@ -103,7 +103,7 @@ export const bookHandler = {
      * @returns {number} date : yyyymmdd
      */
     getDateNumberFormat : function(date){
-        let ds = date.split("/");
+        let ds = date.split("-");
         return ds[2]+ds[1]+ds[0];
     },
 
