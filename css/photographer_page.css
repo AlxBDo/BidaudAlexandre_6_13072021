@@ -37,7 +37,7 @@
 #contact .input-info {
 	font-size: medium;
 	color: white;
-	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
 	transform: translateY(-75px);
 	opacity: 0;
 	transition: all 300ms;
@@ -447,7 +447,7 @@ main {
 	.gallery { flex-wrap: wrap; }
 	.gallery a img, .gallery a video { height: 90%; }
 	.gallery a h2, .gallery a p { padding: 1% 0; }
-	#gallery h2, #gallery p { font-weight: large; }
+	#gallery h2, #gallery p { font-size: x-large; }
 	.lightbox h2 {
 		padding: 1% 0;
 		width: 80%;
