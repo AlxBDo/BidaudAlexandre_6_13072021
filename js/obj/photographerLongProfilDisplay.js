@@ -56,6 +56,7 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
             let sum_like = 0 ;
             for(let work of book){
                 // test picture or video
+                console.log(work);
                 if(typeof work === "object"){
                     let file_name = work.image ? work.image : work.video;
                     let name_split = file_name.split(".");
@@ -73,10 +74,11 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
                     media_ctnr.setAttribute("aria-label", work.title+", closeup view");
                     let media = document.getElementById(media_type+"-"+id_number);
                     media.setAttribute("src", photo_path+file_name);
+                    media.setAttribute("alt", work["alt-text"]);
                     media.setAttribute("aria-label", work.title);
                     document.getElementById(media_type+"-date-"+id_number).textContent = work.date;
                     document.getElementById(media_type+"-like-"+id_number).textContent = work.likes;
-                    document.getElementById(media_type+"-title-"+id_number).textContent = work.title;
+                    document.getElementById(media_type+"-title-"+id_number).textContent = work["alt-text"];
                     sum_like += work.likes;
                 }
                 

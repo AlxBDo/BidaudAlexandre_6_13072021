@@ -171,7 +171,7 @@ h1 {
 	flex-direction: column;
 }
 .lightbox a.activ img, .lightbox a.activ video {
-	height: 100%;
+	height: 93%;
 	object-fit: cover;
 	margin: 0 auto;
 }

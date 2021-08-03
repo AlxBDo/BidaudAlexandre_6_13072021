@@ -87,7 +87,7 @@ import {bookHandler} from "./bookHandler.js";
         let classAdded = classRemoved === "gallery" ? "lightbox" : "gallery";
         if(classAdded != "lightbox"){ 
             GALLERY.setAttribute("role", "none");
-            GALLERY.setAttribute("aria-label", "media gallery");
+            GALLERY.setAttribute("aria-label", "medias");
             this.clearActivClass(); 
         } else {
             GALLERY.setAttribute("role", "dialog");
