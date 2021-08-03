@@ -394,6 +394,8 @@ main {
 	#photographer-informations img {
 		width: 30%;
 		margin: 0;
+		max-height: 110px;
+		height: 75%;
 	}
 	#photographer-informations img {
 		box-shadow: 0 1px 7px lightgray;
