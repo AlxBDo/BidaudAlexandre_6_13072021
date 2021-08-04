@@ -5,7 +5,7 @@ import photographerDisplayAbstract from "./photographerDisplay.js";
  */
 export default class photoShortProfilDisplay extends photographerDisplayAbstract {
 
-    static htmlContainer = document.getElementById('photographers-list');
+    static htmlContainer = document.getElementById("photographers-list");
     profilContainer = document.getElementById("photographers-list");
 
     /**
@@ -32,7 +32,7 @@ export default class photoShortProfilDisplay extends photographerDisplayAbstract
         // profil div container creation
         let profilBox = document.createElement("a");
         profilBox.classList.add("profil", "flex");
-        profilBox.setAttribute('href', this.getProfilPageLink());
+        profilBox.setAttribute("href", this.getProfilPageLink());
         profilBox.ariaLabel = this.getName()+"'s profil link";
         // profil img creation and insertion to profilBox
         let profilImg = document.createElement("img");

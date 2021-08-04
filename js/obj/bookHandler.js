@@ -43,15 +43,17 @@ export const bookHandler = {
      * add like on click
      */
     addLikeOnClick: function(){
-        document.querySelectorAll(".like").forEach(element => {
-            element.addEventListener("click", function(event){
-                event.preventDefault();
-                event.stopPropagation();
-                if(!element.classList.contains("liked")){
-                    bookHandler.addLikeWork(element);
-                }
+        setTimeout(function(){
+            document.querySelectorAll(".like").forEach(element => {
+                element.addEventListener("click", function(event){
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if(!element.classList.contains("liked")){
+                        bookHandler.addLikeWork(element);
+                    }
+                });
             });
-        });
+        }, 100);
     },
     
     /**
@@ -62,6 +64,8 @@ export const bookHandler = {
         if(typeof dom_element_obj === "object"){
             dom_element_obj.textContent = parseInt(dom_element_obj.textContent) + 1 ;
             LIKE_SUM.textContent = parseInt(LIKE_SUM.textContent) + 1 ;
+            // added the Liked class so that the action cannot be repeated
+            dom_element_obj.classList.add("liked");
         }
     },
 

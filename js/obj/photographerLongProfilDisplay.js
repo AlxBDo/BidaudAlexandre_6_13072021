@@ -1,14 +1,102 @@
-import {LIKE_SUM} from "../constantes_photographer_page.js";
-import {PHOTO_SUM} from "../constantes_photographer_page.js";
-import {VIDEO_SUM} from "../constantes_photographer_page.js";
-
-
+import {LIKE_SUM, PHOTO_SUM, VIDEO_SUM} from "../constantes_photographer_page.js";
 import photographerDisplayAbstract from "./photographerDisplay.js";
 
 /**
  * display photographer profil on photographer page
  */
 export default class photographerLongProfilDisplay extends photographerDisplayAbstract {
+
+    media_path = "img/photos/";
+
+    /**
+     * 
+     * @param {object} json_object_media 
+     * @param {string} media_type 
+     * @param {number} id_number 
+     * @param {string} photographer_name 
+     * @param {string} file_name 
+     * @returns {object} media html pattern
+     */
+     addMediaInGallery(json_object_media, media_type, id_number, photographer_name, file_name){
+        let ctnr = document.getElementById(media_type+"-container-"+id_number);
+        ctnr.classList.replace("hidden", "photo-container");
+        ctnr.setAttribute("aria-label", json_object_media.title + ", closeup view");
+        ctnr.append(
+            this.getMediaPattern(json_object_media, media_type, id_number, photographer_name, file_name)
+        );
+        ctnr.append( this.getMediaTitlePattern(json_object_media, media_type, id_number) );
+        ctnr.append( this.getMediaLikePattern(json_object_media, media_type, id_number) );
+        ctnr.append( this.getPPattern("date", media_type, id_number, json_object_media.date) );
+        return ctnr;
+    }
+
+    addPortraitImg(){
+        let portrait = document.createElement("img");
+        this.setProfilImgSrc(portrait);
+        document.getElementById("photographer-informations").append(portrait);
+    }
+
+    /**
+     * 
+     * @param {object} json_object_media 
+     * @param {string} media_type 
+     * @param {number} id_number 
+     * @returns {object} <p> dom element
+     */
+    getMediaLikePattern(json_object_media, media_type, id_number){
+        let ptrn = this.getPPattern("like", media_type, id_number, json_object_media.likes);
+        ptrn.setAttribute("role", "text");
+        ptrn.setAttribute("aria-label", "likes");
+        return ptrn;
+    }
+
+    /**
+     * 
+     * @param {object} json_object_media 
+     * @param {string} media_type 
+     * @param {number} id_number 
+     * @param {string} photographer_name 
+     * @param {string} file_name 
+     * @returns {object} <img> dom element
+     */
+    getMediaPattern(json_object_media, media_type, id_number, photographer_name, file_name){
+        let ptrn = media_type === "photo" ? document.createElement("img") : document.createElement("video");
+        ptrn.setAttribute("id", media_type + "-" + id_number);
+        ptrn.setAttribute("src", this.media_path + photographer_name + "/" + file_name);
+        ptrn.setAttribute("alt", json_object_media["alt-text"]);
+        ptrn.setAttribute("aria-label", json_object_media.title);
+        return ptrn;
+    }
+
+    /**
+     * 
+     * @param {object} json_object_media 
+     * @param {string} media_type 
+     * @param {number} id_number
+     * @returns {object} <h2> dom element
+     */
+    getMediaTitlePattern(json_object_media, media_type, id_number){
+        let ptrn = document.createElement("h2");
+        ptrn.setAttribute("id", media_type + "-title-" + id_number);
+        ptrn.textContent = json_object_media["alt-text"];
+        return ptrn;
+    }
+
+    /**
+     * 
+     * @param {string} radical_of_id  
+     * @param {string} media_type 
+     * @param {number} id_number 
+     * @param {string} text_content 
+     * @returns {object} <p> dom element
+     */
+    getPPattern(radical_of_id, media_type, id_number, text_content){
+        let ptrn = document.createElement("p");
+        ptrn.setAttribute("id", media_type + "-" + radical_of_id + "-" + id_number);
+        ptrn.classList.add(radical_of_id === "like" ? "like" : "hidden");
+        ptrn.textContent = text_content;
+        return ptrn;
+    }
 
     show(){
         let domElementToComplete = [
@@ -30,7 +118,7 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
                     document.getElementById(element).textContent = this.getName();
                     break;
                 case "Portrait":
-                    this.setProfilImgSrc(document.getElementById("Portrait"));
+                    this.addPortraitImg();
                     break;
                 case "Tags":
                     this.getLiTags(document.getElementById("Tags"));
@@ -51,7 +139,6 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
             let id_number = 0;
             let media_type = "";
             let photo_number = 0;
-            let photo_path = "img/photos/"+photographer_name+"/";
             let video_number = 0;
             let sum_like = 0 ;
             for(let work of book){
@@ -68,16 +155,7 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
                         media_type = "video";
                         video_number++;
                     }
-                    let media_ctnr = document.getElementById(media_type+"-container-"+id_number);
-                    media_ctnr.classList.replace("hidden", "photo-container");
-                    media_ctnr.setAttribute("aria-label", work.title+", closeup view");
-                    let media = document.getElementById(media_type+"-"+id_number);
-                    media.setAttribute("src", photo_path+file_name);
-                    media.setAttribute("alt", work["alt-text"]);
-                    media.setAttribute("aria-label", work.title);
-                    document.getElementById(media_type+"-date-"+id_number).textContent = work.date;
-                    document.getElementById(media_type+"-like-"+id_number).textContent = work.likes;
-                    document.getElementById(media_type+"-title-"+id_number).textContent = work["alt-text"];
+                    this.addMediaInGallery(work, media_type, id_number, photographer_name, file_name);
                     sum_like += work.likes;
                 }
                 

@@ -89,7 +89,7 @@ import {bookHandler} from "./bookHandler.js";
         let classAdded = classRemoved === "gallery" ? "lightbox" : "gallery";
         if(classAdded != "lightbox"){ 
             GALLERY.setAttribute("role", "none");
-            GALLERY.setAttribute("aria-label", "medias");
+            GALLERY.setAttribute("aria-label", "");
             this.clearActivClass(); 
         } else {
             GALLERY.setAttribute("role", "dialog");
@@ -121,13 +121,6 @@ import {bookHandler} from "./bookHandler.js";
             event.stopPropagation();
             lightboxObject.changeBookView();
         }); 
-    },
-
-    /**
-     * browse the array of function names and execute them to add the listeners
-     */
-    listen: function(){
-        this.listen_fct_names.forEach(element => { this[element](); });
     },
     
     /**

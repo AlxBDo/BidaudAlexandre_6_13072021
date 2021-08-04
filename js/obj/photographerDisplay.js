@@ -30,7 +30,7 @@ export default class photographerDisplayAbstract {
             this.getTags().forEach(element => {
                 // li creation
                 let li = document.createElement("li");
-                li.classList.add('inline-block', "first-color-text", "tags");
+                li.classList.add("inline-block", "first-color-text", "tags");
                 // span creation and insertion to li
                 let span = document.createElement("span");
                 span.textContent = element;
@@ -57,9 +57,9 @@ export default class photographerDisplayAbstract {
      * @param {object} imgHtmlElement : img Dom element
      */
     setProfilImgSrc(imgHtmlElement){ 
-        imgHtmlElement.setAttribute('src', this.profilImgPath + this.getPortrait());
-        imgHtmlElement.setAttribute('atl', this.getName()+"'s photo profil"); 
-        imgHtmlElement.setAttribute('role', "presentation");      
+        imgHtmlElement.setAttribute("src", this.profilImgPath + this.getPortrait());
+        imgHtmlElement.setAttribute("atl", this.getName()+"'s photo profil"); 
+        imgHtmlElement.setAttribute("role", "presentation");      
     }
     
 }
