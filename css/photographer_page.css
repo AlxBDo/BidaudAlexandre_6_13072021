@@ -210,8 +210,8 @@ main {
 }
 .media .like::after{
 	background-image: url("../img/icons/like_fc.svg");
-	width: 15px;
-	height: 15px;
+	width: 19px;
+	height: 19px;
 }
 #message{ resize: none; }
 #next { background-image: url("../img/icons/next.svg"); }

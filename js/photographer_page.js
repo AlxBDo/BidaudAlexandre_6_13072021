@@ -1,7 +1,38 @@
+import {listenner} from "./obj/listenner.js";
 import jsonDataCollector from "./obj/jsonDataCollector.js";
 import {bookHandler} from "./obj/bookHandler.js";
 import {contactForm} from "./obj/contactForm.js";
 import {lightboxObject} from "./obj/lightbox.js";
+
+/**
+ * object dedicated to the Listener object used to manage keyboard events
+ */
+let keyboardListenner = {
+
+    keys_searched : ["ArrowLeft", "ArrowRight", "Escape"],
+
+    /**
+     * 
+     * @returns {array} array of listenner functions name
+     */
+    getListenFctName: function(){ return ["listenKeyboard"]; },
+
+    listenKeyboard : function(){
+        document.addEventListener("keydown", (event) => {
+            this.keys_searched.forEach(ks => { if(event.key === ks){ this[ks + "Action"](); } });
+          }, false);
+    },
+
+    ArrowLeftAction: function(){ lightboxObject.move("previous"); },
+
+    ArrowRightAction: function(){ lightboxObject.move("next"); },
+
+    EscapeAction: function(){ 
+        if(lightboxObject.getGalleryMode() === "lightbox") { lightboxObject.changeBookView(); 
+        } else { contactForm.close() ; }
+    }
+
+};
 
 
 
@@ -13,8 +44,6 @@ if(url.split("?")[1]){
         // get json data and display it
         jsonDataCollector.search("id", getParams.get("id"));
         // add even listenner
-        bookHandler.listen();
-        contactForm.listen();
-        lightboxObject.listen();
+        listenner.listen([bookHandler, contactForm, keyboardListenner, lightboxObject]);
     }
 }

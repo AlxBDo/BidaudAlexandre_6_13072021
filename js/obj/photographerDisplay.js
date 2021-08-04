@@ -26,7 +26,7 @@ export default class photographerDisplayAbstract {
      * @param {object} ulDomElementObj 
      */
     getLiTags(ulDomElementObj){
-        if(typeof ulDomElementObj === 'object'){
+        if(typeof ulDomElementObj === "object"){
             this.getTags().forEach(element => {
                 // li creation
                 let li = document.createElement("li");

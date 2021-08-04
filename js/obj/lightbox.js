@@ -13,11 +13,7 @@ import {bookHandler} from "./bookHandler.js";
 
     close_lightbox_btn : document.getElementById("close-lightbox"),
     galleryClassList : GALLERY.classList,
-    //store the current position of the Lightbox
-    lightboxPosition : document.getElementById("lightbox-position"),
-    // function names's array to create listeners
-    listen_fct_names : ["closeClick", "openClick", "moveClick"],
-
+    lightboxPosition : document.getElementById("lightbox-position"), //store the current position of the Lightbox
 
     getCurrentPosition : function(){ return parseInt(this.lightboxPosition.value); },
 
@@ -28,6 +24,12 @@ import {bookHandler} from "./bookHandler.js";
     getGalleryMode : function(){ 
         return this.galleryClassList.contains("gallery") ? "gallery" : "lightbox" ; 
     },
+
+    /**
+     * 
+     * @returns {array} array of listenner functions name
+     */
+    getListenFctName: function(){ return ["closeClick", "openClick", "moveClick"]; },
 
     /**
      * provide the id of the following media

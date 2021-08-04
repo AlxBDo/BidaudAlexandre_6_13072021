@@ -15,8 +15,7 @@ export const bookHandler = {
     elements_like : [],
     //- by title
     elements_title : [],
-    // function names's array to create listeners
-    listen_fct_names : ["addLikeOnClick", "orderByClick", "selectOptionsClick"],
+    
     order_by_select : document.getElementById("order-by"),
 
     /**
@@ -130,11 +129,10 @@ export const bookHandler = {
     },
 
     /**
-     * browse the array of function names and execute them to add the listeners
+     * 
+     * @returns {array} array of listenner functions name
      */
-    listen: function(){
-        this.listen_fct_names.forEach(element => { this[element](); });
-    },
+    getListenFctName: function(){ return ["addLikeOnClick", "orderByClick", "selectOptionsClick"]; },
     
     /** 
      * open or close order by select 
@@ -152,7 +150,9 @@ export const bookHandler = {
         });
     },
     
-    /** selected order option */
+    /** 
+     * selected order option
+     */
     selectOptionsClick: function(){
         document.querySelectorAll("#order-by a").forEach(element => {
             element.addEventListener("click", function(event){

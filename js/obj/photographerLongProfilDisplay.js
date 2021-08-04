@@ -56,7 +56,6 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
             let sum_like = 0 ;
             for(let work of book){
                 // test picture or video
-                console.log(work);
                 if(typeof work === "object"){
                     let file_name = work.image ? work.image : work.video;
                     let name_split = file_name.split(".");

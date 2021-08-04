@@ -11,5 +11,6 @@
     "rules": {
         "semi": ["warn", "always"],
         "quotes": ["error", "double"]
-    }
+    },
+        "parser": "babel-eslint"
 }

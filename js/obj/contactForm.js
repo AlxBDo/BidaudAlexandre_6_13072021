@@ -4,13 +4,8 @@ export const contactForm = {
 
     close_modal_btn : document.getElementById("close-modal-form"),
     form_dom_obj : document.getElementById("contact"),
-    // store input values
-    inputs_value : new Map(),
-    // function names's array to create listeners
-    listen_fct_names : ["submit", "close", "open", "onChangeInput"],
+    inputs_value : new Map(), // store input values
     open_form_link: document.getElementById("contact-form-link"),
-
-    
 
     /**
      * check inputs value
@@ -94,10 +89,17 @@ export const contactForm = {
      * close contact form modal
      */
     close : function(){
+        MODAL_CF_CLASSLIST.replace("opened", "closed");
+        document.getElementById("fishEye-HomePage").focus();
+    },
+
+    /**
+     * Add click listenner on close modal button
+     */
+    closeClick : function(){
         this.close_modal_btn.addEventListener("click", event => {
             event.preventDefault();
-            MODAL_CF_CLASSLIST.replace("opened", "closed");
-            document.getElementById("fishEye-HomePage").focus();
+            this.close();
         });
     },
 
@@ -115,11 +117,10 @@ export const contactForm = {
     },
 
     /**
-     * browse the array of function names and execute them to add the listeners
+     * 
+     * @returns {array} array of listenner functions name
      */
-    listen: function(){
-        this.listen_fct_names.forEach(element => { this[element](); });
-    },
+    getListenFctName: function(){ return ["submit", "closeClick", "open", "onChangeInput"]; },
 
     /**
      * get inputs and add onchange listenner

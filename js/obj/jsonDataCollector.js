@@ -35,10 +35,10 @@ static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/
                 }
             })
             .then(function(value){
-                if(Array.isArray(value['photographers'])){
-                    for(let photographer of value['photographers']){
+                if(Array.isArray(value["photographers"])){
+                    for(let photographer of value["photographers"]){
                         let medias = jsonDataCollector.getPhotographerMedia(
-                                        value['media'], 
+                                        value["media"], 
                                         photographer.id
                                     );
                         if(
