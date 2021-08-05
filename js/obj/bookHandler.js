@@ -186,8 +186,14 @@ export const bookHandler = {
      * @returns {number}
      */
     sortBookElement : function (a, b){
-        return a.value > b.value ? 1 
-            : a.value < b.value ? -1 
+        let value_a = a.value; 
+        let value_b = b.value; 
+        if(!isNaN(value_a)){
+            value_a = parseInt(value_a);
+            value_b = parseInt(value_b);
+        }
+        return value_a > value_b ? 1 
+            : value_a < value_b ? -1 
             : 0 ;
     }
 
