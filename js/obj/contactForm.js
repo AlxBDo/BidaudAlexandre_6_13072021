@@ -152,6 +152,7 @@ export const contactForm = {
                 console.log(ipt_val);
             }
             this.clear();
+            document.getElementById("fishEye-HomePage").focus();
         }
     },
     

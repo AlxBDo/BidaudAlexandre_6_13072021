@@ -9,11 +9,10 @@ header {
 	align-items: flex-end;
 }
 header nav {
-    padding: 1% 0 2%;
-	margin: 0 auto;
+    margin: 0 auto;
+	padding-bottom: 1%;
     text-align: center;
 }
-header nav li { margin-right: 1%; }
 .name-photographer { margin: 5% auto 0%; }
 nav .tags { display: inherit; }
 #pass-cont {
@@ -45,6 +44,7 @@ nav .tags { display: inherit; }
 }
 .profil p:nth-of-type(2) { color: black; }
 .profil img { margin: 0 auto; }
+ul.flex li { margin: 0 1% 1% 0%; }
 
 @media screen and (max-width : 1023px) {
 	#fishEye-HomePage { align-self: flex-start; }
@@ -83,6 +83,7 @@ nav .tags { display: inherit; }
 		font-size: 1.85em;
 	}
 	header { width: 70%; }
+	header nav { width: 60%; }
 	nav ul { width: 100%; }
 	#pass-cont { margin-left: 45%; }
 	#photographers-list {

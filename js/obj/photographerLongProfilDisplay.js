@@ -30,6 +30,9 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
         return ctnr;
     }
 
+    /**
+     * insert img in profil to diplay photographer's portrait
+     */
     addPortraitImg(){
         let portrait = document.createElement("img");
         this.setProfilImgSrc(portrait);
@@ -44,9 +47,13 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
      * @returns {object} <p> dom element
      */
     getMediaLikePattern(json_object_media, media_type, id_number){
-        let ptrn = this.getPPattern("like", media_type, id_number, json_object_media.likes);
+        let ptrn = document.createElement("a");
+        ptrn.setAttribute("id", media_type + "-like-" + id_number);
+        ptrn.setAttribute("href", "");
+        ptrn.classList.add("like");
         ptrn.setAttribute("role", "text");
         ptrn.setAttribute("aria-label", "likes");
+        ptrn.textContent = json_object_media.likes;
         return ptrn;
     }
 
@@ -98,6 +105,9 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
         return ptrn;
     }
 
+    /**
+     * Display all photographer's informations
+     */
     show(){
         let domElementToComplete = [
             "Name", 
@@ -142,7 +152,6 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
             let video_number = 0;
             let sum_like = 0 ;
             for(let work of book){
-                // test picture or video
                 if(typeof work === "object"){
                     let file_name = work.image ? work.image : work.video;
                     let name_split = file_name.split(".");

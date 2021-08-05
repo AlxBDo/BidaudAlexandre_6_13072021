@@ -118,19 +118,14 @@
 	width: 100%;
     border-radius: 10px;
 }
-#gallery h2, #gallery p {
+#gallery h2, .media a {
 	margin: 0 auto;
 	color: var(--first-color-dark);
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-.gallery a h2, .gallery a p { width: 50%; }
-.gallery a p {
-	text-align: right;
-	font-weight: bold;
-	font-size: larger;
-}
+.gallery a h2, .media a { width: 50%; }
 .gallery .button-section { display: none ;}
 .gallery .photo-container {
     margin-bottom: 2%;
@@ -195,18 +190,23 @@ h1 {
 	content: "";
     background-size: cover;
 	vertical-align: -1px;
-    margin-left: 5px;
+    margin: 0 2px 0 4px;
     display: inline-block;
 }
-#like-total::after {
-    width: 13px;
-    height: 13px;
-    background-image: url("../img/icons/like_b.svg");
+#like-total::after { 
+	background-image: url("../img/icons/like_b.svg"); 
+	width: 16px;
+	height: 15px;
 }
 main {
     overflow: hidden;
 	display: flex;
 	flex-wrap: wrap;
+}
+.media a {
+	text-align: right;
+	font-weight: bold;
+	font-size: larger;
 }
 .media .like::after{
 	background-image: url("../img/icons/like_fc.svg");
@@ -252,7 +252,10 @@ main {
 #order-by.open::before { content: url("../img/icons/dropdown-open.png"); }
 #order-by.open a:not(#title) { border-color: white; }
 #order-by-container a:hover { color: white; }
-#photographer-informations { display: flex; }
+#photographer-informations { 
+	display: flex;
+	width: 100%; 
+}
 #photographer-informations img { 
 	border-radius: 100%; 
 	object-fit: cover;
@@ -357,9 +360,8 @@ main {
 	.gallery { flex-direction: column; }
 	#gallery.lightbox h2 { margin: 0; }
 	.gallery a img, .gallery a video { max-height: 200px; }
-	#gallery h2, #gallery p {
+	#gallery h2, .media a {
 		font-size: medium;
-		font-weight: normal;
 		padding: 2% 0;
 	}
 	h1 { font-size: 2em; }
@@ -372,14 +374,18 @@ main {
 	.lightbox a.activ img, .lightbox a.activ video { width: 100%; }
 	.lightbox .button-section { width: 13%; }
 	.lightbox .button-section, .lightbox .media {
-		margin: 25% 0;
-		height: 65%;
+		margin: 10% 0;
+		height: 100%;
 	}
 	.lightbox .button-section a {
 		background-size: 30%, contain;
 		margin: 0;
 	}
 	main { margin: 0 3%; }
+	.media .like::after {
+		width: 13px;
+		height: 12px;
+	}
 	#message { height: 140px; }
 	#next {
 		background-position-x: 35%, left;
@@ -392,10 +398,9 @@ main {
 	  min-width: 60%;
 	}
 	#photographer-informations img {
-		width: 30%;
+		width: 110px;
+		height: 110px;
 		margin: 0;
-		max-height: 110px;
-		height: 75%;
 	}
 	#photographer-informations img {
 		box-shadow: 0 1px 7px lightgray;
@@ -446,8 +451,8 @@ main {
 	}
 	.gallery { flex-wrap: wrap; }
 	.gallery a img, .gallery a video { height: 90%; }
-	.gallery a h2, .gallery a p { padding: 1% 0; }
-	#gallery h2, #gallery p { font-size: x-large; }
+	.gallery a h2, .media a { padding: 1% 0; }
+	#gallery h2, #gallery .media a { font-size: large; }
 	.lightbox h2 {
 		padding: 1% 0;
 		width: 80%;
@@ -473,6 +478,10 @@ main {
 		margin: 0 7%;
 		height: 89%; 
 	}
+	.media .like::after {
+		width: 16px;
+		height: 15px;
+	}
 	#message { height: 80px; }
 	#next {
 		background-position-x: left;
@@ -492,6 +501,10 @@ main {
 		margin: 4%;	
 		align-self: center;
 		text-align: right; 
+		max-width: 150px;
+		max-height: 150px;
+		min-width: 140px;
+		min-height: 140px;
 	}
 	#photographer-informations div img { width: 75%; }
 	#photographer-informations .profil {

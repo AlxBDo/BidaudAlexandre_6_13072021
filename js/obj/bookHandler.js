@@ -29,7 +29,7 @@ export const bookHandler = {
             +"-"+array_elements_name
             +"-"+element_id_splitted[2]
         );
-        if(dom_element.textContent != ""){
+        if(dom_element){
             this["elements_"+array_elements_name].push({
                 id: element_id_splitted[0]+"-"+element_id_splitted[1]+"-"+element_id_splitted[2],
                 value: array_elements_name != "date" 
@@ -89,7 +89,7 @@ export const bookHandler = {
         for(let work of this.getElementsArray(orderBy)){
             if(work.id && work.id != ""){
                 let media_element = document.getElementById(work.id);
-                let delai = (parseInt(work.id.split("-")[2])*75);
+                let delai = (counter*75)+100;
                 media_element.style.order = counter;
                 media_element.classList.add("invisible");
                 setTimeout(function(){
