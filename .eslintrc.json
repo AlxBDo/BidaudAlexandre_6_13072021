@@ -1,16 +1,19 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
+    "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "parser": "babel-eslint"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
     "rules": {
         "semi": ["warn", "always"],
         "quotes": ["error", "double"]
     },
-        "parser": "babel-eslint"
+        "extends": [
+            "eslint:recommended"
+          ]
 }
