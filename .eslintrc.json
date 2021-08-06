@@ -10,6 +10,7 @@
     "es6": true
   },
     "rules": {
+        "eqeqeq": "warn",
         "semi": ["warn", "always"],
         "quotes": ["error", "double"]
     },

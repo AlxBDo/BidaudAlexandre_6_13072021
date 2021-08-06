@@ -8,7 +8,7 @@ import photographerLongProfilDisplay from "./photographerLongProfilDisplay.js" ;
  */
 export default class jsonDataCollector {
 
-static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json";
+static jsonDataFile(){ return "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/fishEyeData.json"; }
 
     static getPhotographerMedia(media_json_data_array, photographer_id){
         if(Array.isArray(media_json_data_array)){
@@ -28,7 +28,7 @@ static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/
      * @param {string} valueSearched 
      */
     static search(keySearched = false, valueSearched = false){
-        fetch(this.jsonDataFile)
+        fetch(this.jsonDataFile())
             .then(function(res){
                 if(res.ok){
                     return res.json();
@@ -60,7 +60,7 @@ static jsonDataFile = "https://alxbdo.github.io/BidaudAlexandre_6_13072021/data/
                             ).show();
                         }
                     }
-                    if(keySearched != "id"){ photoShortProfilDisplay.ajustHeightImg(); }
+                    if(keySearched !== "id"){ photoShortProfilDisplay.ajustHeightImg(); }
                 }
             })
             .catch(function(err){

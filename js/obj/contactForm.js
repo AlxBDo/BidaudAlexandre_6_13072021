@@ -24,7 +24,7 @@ export const contactForm = {
      * @returns {boolean} true input value is valid
      */
     checkInput: function(ipt){
-        if(ipt.id != ""){
+        if(ipt.id !== ""){
             let id = ipt.id.includes("name") ? "Name" 
             : ipt.id.charAt(0).toUpperCase()+ipt.id.substring(1);
             if(
@@ -72,7 +72,7 @@ export const contactForm = {
      */
     clear: function(){
         for(let ipt of this.form_dom_obj.elements){ 
-            if(ipt.id != ""){ 
+            if(ipt.id !== ""){ 
                 ipt.value = ""; 
                 let container_classlist = document.getElementById(ipt.id+"-info").classList;
                 if(container_classlist.contains("err")){ container_classlist.remove("err"); }
@@ -127,7 +127,7 @@ export const contactForm = {
      */
     onChangeInput: function(){
         for(let ipt of this.form_dom_obj.elements){
-            ipt.addEventListener("change", event => { this.checkInput(ipt); });
+            ipt.addEventListener("change", function(){ contactForm.checkInput(ipt); });
         }
     },
 

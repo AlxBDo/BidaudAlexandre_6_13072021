@@ -6,7 +6,7 @@ import photographerDisplayAbstract from "./photographerDisplay.js";
  */
 export default class photographerLongProfilDisplay extends photographerDisplayAbstract {
 
-    media_path = "img/photos/";
+    media_path(){ return "img/photos/"; }
 
     /**
      * 
@@ -69,7 +69,7 @@ export default class photographerLongProfilDisplay extends photographerDisplayAb
     getMediaPattern(json_object_media, media_type, id_number, photographer_name, file_name){
         let ptrn = media_type === "photo" ? document.createElement("img") : document.createElement("video");
         ptrn.setAttribute("id", media_type + "-" + id_number);
-        ptrn.setAttribute("src", this.media_path + photographer_name + "/" + file_name);
+        ptrn.setAttribute("src", this.media_path() + photographer_name + "/" + file_name);
         ptrn.setAttribute("alt", json_object_media["alt-text"]);
         ptrn.setAttribute("aria-label", json_object_media.title);
         return ptrn;

@@ -1,6 +1,6 @@
 export default class photographerDisplayAbstract {
 
-    profilImgPath = "img/photos/Profils/" ;
+    profilImgPath(){ return "img/photos/Profils/" ; }
 
     constructor(photographerjsonData, mediajsonData){
         if(this.constructor === photographerDisplayAbstract){
@@ -57,7 +57,7 @@ export default class photographerDisplayAbstract {
      * @param {object} imgHtmlElement : img Dom element
      */
     setProfilImgSrc(imgHtmlElement){ 
-        imgHtmlElement.setAttribute("src", this.profilImgPath + this.getPortrait());
+        imgHtmlElement.setAttribute("src", this.profilImgPath() + this.getPortrait());
         imgHtmlElement.setAttribute("atl", this.getName()+"'s photo profil"); 
         imgHtmlElement.setAttribute("role", "presentation");      
     }

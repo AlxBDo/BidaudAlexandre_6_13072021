@@ -5,8 +5,8 @@ import photographerDisplayAbstract from "./photographerDisplay.js";
  */
 export default class photoShortProfilDisplay extends photographerDisplayAbstract {
 
-    static htmlContainer = document.getElementById("photographers-list");
-    profilContainer = document.getElementById("photographers-list");
+    static htmlContainer(){ return document.getElementById("photographers-list"); }
+    profilContainer(){ return document.getElementById("photographers-list"); }
 
     /**
      * ajust photographer profil image in index page
@@ -26,7 +26,7 @@ export default class photoShortProfilDisplay extends photographerDisplayAbstract
      */
     getProfilPageLink(){ return "photographer_page.html?id="+this.getId(); }
 
-    static initHTMLContainer(){ this.htmlContainer.innerHTML = ""; }
+    static initHTMLContainer(){ this.htmlContainer().innerHTML = ""; }
 
     show(){
         // profil div container creation
@@ -65,7 +65,7 @@ export default class photoShortProfilDisplay extends photographerDisplayAbstract
         this.getLiTags(ul);
         profilBox.append(ul);
         // insert to profilContainer
-        this.profilContainer.append(profilBox);
+        this.profilContainer().append(profilBox);
     }
 
 }

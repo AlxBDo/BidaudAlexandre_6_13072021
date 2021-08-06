@@ -32,7 +32,7 @@ export const bookHandler = {
         if(dom_element){
             this["elements_"+array_elements_name].push({
                 id: element_id_splitted[0]+"-"+element_id_splitted[1]+"-"+element_id_splitted[2],
-                value: array_elements_name != "date" 
+                value: array_elements_name !== "date" 
                         ? dom_element.textContent 
                         : this.getDateNumberFormat(dom_element.textContent),
             });
@@ -87,7 +87,7 @@ export const bookHandler = {
     displayBookSorted: function(orderBy){
         let counter = 1;
         for(let work of this.getElementsArray(orderBy)){
-            if(work.id && work.id != ""){
+            if(work.id && work.id !== ""){
                 let media_element = document.getElementById(work.id);
                 let delai = (counter*75)+100;
                 media_element.style.order = counter;

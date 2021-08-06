@@ -87,7 +87,7 @@ import {bookHandler} from "./bookHandler.js";
     changeBookView : function(){
         let classRemoved = this.getGalleryMode();
         let classAdded = classRemoved === "gallery" ? "lightbox" : "gallery";
-        if(classAdded != "lightbox"){ 
+        if(classAdded !== "lightbox"){ 
             GALLERY.setAttribute("role", "none");
             GALLERY.setAttribute("aria-label", "");
             this.clearActivClass(); 
